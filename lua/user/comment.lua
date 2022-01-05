@@ -28,3 +28,12 @@ comment.setup {
 local function map(mode, lhs, rhs)
   vim.api.nvim_set_keymap(mode, lhs, rhs, { noremap = true, silent = true })
 end
+
+-- Mappings
+-- Linewise commnet toggle using Ctrl-/ (e.g. // some comment)
+map('n', '<C-_>', ':lua require("Comment.api").toggle_current_linewise()<CR>')
+map('v', '<C-_>', ':lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+
+-- Blockwise comment toggle using Ctrl-\ (e.g. /* some comment */)
+map('n', '<C-\\>', ':lua require("Comment.api").toggle_current_blockwise()<CR>')
+map('v', '<C-\\>', ':lua require("Comment.api").toggle_blockwise_op(vim.fn.visualmode())<CR>')
