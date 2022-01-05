@@ -9,9 +9,16 @@ autopairs.setup {
   },
   disable_filetype = { "TelescopePrompt", "spectre_panel" },
   fast_wrap = {
-    -- TODO
+    map = '<C-f>',
+    chars = { '{', '[', '(', '"', "'" },
+    pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], '%s+', ''),
+    offset = 0, -- Offset from pattern match
+    keys = 'qwertyuiopzxcvbnmasdfghjkl',
+    end_key = '$',
+    check_comma = true,
+    highlight = 'Search',
+    highlight_grey = 'Comment',
   },
-  ignored_next_char = "[%w%.]" -- will ignore alphanumeric and `.` symbol
 }
 
 local cmp_autopairs = require "nvim-autopairs.completion.cmp"
