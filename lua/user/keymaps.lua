@@ -28,7 +28,7 @@ keymap("n", "<Tab>", ":tabnext<CR>", opts)
 keymap("n", "<S-Tab>", ":tabprev<CR>", opts)
 keymap("n", "<leader>t", ":tabnew ", { noremap = true })
 
-keymap("n", "<F2>", ":Lex 30<CR>", opts)
+keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
 
 -- Insert --
 -- Press jk fast to exit Insert mode
