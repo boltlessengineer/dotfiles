@@ -22,13 +22,20 @@ vim.g.maplocalleader = " "
 -- Resize with arrows
 
 -- Navigate buffers
---keymap("n", "<Tab>", ":bnext<CR>", opts)
---keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
+keymap("n", "<Right>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<Left>", ":BufferLineCyclePrev<CR>", opts)
+-- keymap("n", "<leader>b", ":e ", { noremap = true })
+
+-- Navigate tabs
 keymap("n", "<Tab>", ":tabnext<CR>", opts)
 keymap("n", "<S-Tab>", ":tabprev<CR>", opts)
 keymap("n", "<leader>t", ":tabnew ", { noremap = true })
 
 keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
+
+-- Keeping search results centered
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
 
 -- Insert --
 -- Press jk fast to exit Insert mode
