@@ -5,9 +5,10 @@ require "user.colorscheme"
 require "user.cmp"
 require "user.lsp"
 require "user.treesitter"
+require "user.comment"
 require "user.autopairs"
 require "user.gitsigns"
-
+require "user.nvim-tree"
+require "user.bufferline"
 require "user.lualine"
 
-require "user.nvim-tree"
