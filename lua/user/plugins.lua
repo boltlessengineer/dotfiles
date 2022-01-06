@@ -1,3 +1,5 @@
+-- vim:fdm=marker
+-- Packer.nvim settings {{{
 local fn = vim.fn
 
 -- Automatically install packer
@@ -35,6 +37,7 @@ packer.init {
     end,
   },
 }
+-- }}}
 
 -- Install plugins here
 return packer.startup(function(use)

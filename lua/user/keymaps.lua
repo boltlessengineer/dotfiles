@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
---Remap space as leader key
+-- Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -30,6 +30,8 @@ keymap("n", "<Left>", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<Tab>", ":tabnext<CR>", opts)
 keymap("n", "<S-Tab>", ":tabprev<CR>", opts)
 keymap("n", "<leader>t", ":tabnew ", { noremap = true })
+
+keymap("n", "<leader>l", ":lua ", { noremap = true })
 
 keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
 
