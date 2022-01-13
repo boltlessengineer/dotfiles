@@ -51,7 +51,6 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-tree.lua"-- File explorer written in lua
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
-
   use "nvim-lualine/lualine.nvim"
 
   -- Colorschemes

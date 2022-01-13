@@ -36,7 +36,7 @@ M.setup = function()
     border = "rounded",
   })
 
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = "rounded",
   })
 end
@@ -59,6 +59,7 @@ local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
+  buf_set_keymap('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', 'gh', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -74,6 +75,12 @@ M.on_attach = function(client, bufnr)
 
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
+  end
+  if client.resolved_capabilities.document_formatting then
+    vim.api.nvim_command [[augroup Format]]
+    vim.api.nvim_command [[autocmd! * <buffer>]]
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    vim.api.nvim_command [[augroup END]]
   end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
