@@ -59,6 +59,7 @@ local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
@@ -71,17 +72,20 @@ end
 M.on_attach = function(client, bufnr)
 
   -- Enable completion triggered by <c-x><c-o>
-  --vim.api.nvim_buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'lua.vim.lsp.omnifunc')
 
-  if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
-  end
   if client.resolved_capabilities.document_formatting then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-    vim.api.nvim_command [[augroup END]]
+    vim.api.nvim_exec(
+      [[
+      augroup Format
+        autocmd! * <buffer>
+        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+      augroup END
+      ]],
+      false
+    )
   end
+
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end

@@ -1,6 +1,17 @@
 local ok, lsp_installer = pcall(require, "nvim-lsp-installer")
 if not ok then return end
 
+-- Install loved servers
+local servers = {"sumneko_lua", "gopls", "tailwindcss", "tsserver"}
+for _, name in pairs(servers) do
+  local server_is_found, server = lsp_installer.get_server(name)
+  if server_is_found and not server:is_installed() then
+    server:install()
+  end
+end
+
+-- TODO: turn of formatting in htmlls & cssls
+
 -- Register a handler that will be called for all installed servers.
 -- Or register handlers on specific server instances.
 lsp_installer.on_server_ready(function(server)
@@ -21,9 +32,10 @@ lsp_installer.on_server_ready(function(server)
 
   if server.name == "tsserver" then
     local tsserver_opts = require("user.lsp.settings.tsserver")
-    opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
+    opts = vim.tbl_deep_extend("force", opts, tsserver_opts)
   end
 
+  -- TODO: Remove diagnosticls settings
   if server.name == "diagnosticls" then
     local diagnostics_opts = require("user.lsp.settings.diagnosticls")
     opts = vim.tbl_deep_extend("force", diagnostics_opts, opts)
