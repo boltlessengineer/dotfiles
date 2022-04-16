@@ -2,7 +2,7 @@ local ok, lsp_installer = pcall(require, "nvim-lsp-installer")
 if not ok then return end
 
 -- Install loved servers
-local servers = {"sumneko_lua", "gopls", "tailwindcss", "tsserver"}
+local servers = { "sumneko_lua", "gopls", "tailwindcss", "tsserver" }
 for _, name in pairs(servers) do
   local server_is_found, server = lsp_installer.get_server(name)
   if server_is_found and not server:is_installed() then
@@ -27,7 +27,7 @@ lsp_installer.on_server_ready(function(server)
 
   if server.name == "sumneko_lua" then
     local sumneko_opts = require("user.lsp.settings.sumneko_lua")
-    opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+    opts = vim.tbl_deep_extend("force", opts, sumneko_opts)
   end
 
   if server.name == "tsserver" then
