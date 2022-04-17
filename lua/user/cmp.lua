@@ -3,6 +3,7 @@ if not cmp_ok then return end
 
 local snip_ok, luasnip = pcall(require, "luasnip")
 if not snip_ok then return end
+luasnip.filetype_extend("dart", { "flutter" })
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -96,7 +97,7 @@ cmp.setup {
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
-    -- { name = "luasnip" },
+    { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
   },
