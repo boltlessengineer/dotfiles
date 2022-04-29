@@ -42,14 +42,14 @@ packer.init {
 -- Install plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use "wbthomason/packer.nvim"  -- Have packer manage itself
-  use "nvim-lua/popup.nvim"     -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim"   -- Useful lua functions used by lots of plugins
-  use "windwp/nvim-autopairs"   -- Autopairs, integrates with both cmp and treesitter
-  use "windwp/nvim-ts-autotag"  -- Autotags, =
-  use "numToStr/Comment.nvim"   -- Easily comment stuff
+  use "wbthomason/packer.nvim" -- Have packer manage itself
+  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use "windwp/nvim-ts-autotag" -- Autotags, =
+  use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"-- File explorer written in lua
+  use "kyazdani42/nvim-tree.lua" -- File explorer written in lua
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
@@ -58,25 +58,25 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp"        -- The completion plugin
-  use "hrsh7th/cmp-buffer"      -- buffer completions
-  use "hrsh7th/cmp-path"        -- path completions
-  use "hrsh7th/cmp-cmdline"     -- cmdline copletions
-  use "saadparwaiz1/cmp_luasnip"-- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"    -- LSP completions
-  use "hrsh7th/cmp-nvim-lua"    -- vim lua completions
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline copletions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp" -- LSP completions
+  use "hrsh7th/cmp-nvim-lua" -- vim lua completions
 
   -- snippets
-  use "L3MON4D3/LuaSnip"        -- snippet engine
+  use "L3MON4D3/LuaSnip" -- snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
-  use "neovim/nvim-lspconfig"   -- enable LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "jose-elias-alvarez/nvim-lsp-ts-utils" -- typescript dev utils
   -- Language specific plugins (doesn't depend on nvim-lspconfg)
-  use "akinsho/flutter-tools.nvim"      -- flutter
+  use "akinsho/flutter-tools.nvim" -- flutter
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
