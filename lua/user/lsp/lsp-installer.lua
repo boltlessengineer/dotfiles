@@ -10,7 +10,7 @@ for _, name in pairs(servers) do
   end
 end
 
--- TODO: turn of formatting in htmlls & cssls
+-- TODO: turn off formatting in htmlls & cssls
 
 -- Register a handler that will be called for all installed servers.
 -- Or register handlers on specific server instances.

@@ -32,14 +32,14 @@ null_ls.setup({
       extra_args = { '--no-semi', '--single-quote', '--jsx-single-quote' }
     })
   },
-  -- on_attach = function (client)
-  -- if client.resolved_capabilities.document_formatting then
-  --     vim.cmd([[
-  --     augroup LspFormatting
-  --       autocmd! * <buffer>
-  --       autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-  --     augroup END
-  --     ]])
-  --   end
-  -- end,
+  on_attach = function(client)
+    if client.resolved_capabilities.document_formatting then
+      vim.cmd([[
+      augroup LspFormatting
+        autocmd! * <buffer>
+        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+      augroup END
+      ]])
+    end
+  end,
 })
