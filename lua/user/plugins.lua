@@ -53,6 +53,7 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
+  use "feline-nvim/feline.nvim" -- More customizable statusline plugin
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
