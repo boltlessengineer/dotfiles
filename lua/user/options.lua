@@ -1,9 +1,10 @@
 -- Change fish to bash
 -- check this issue: https://github.com/kyazdani42/nvim-tree.lua/issues/549
-local fish = "fish"
+--[[ local fish = "fish"
 if vim.o.shell:sub(- #fish) == fish then
   vim.opt.shell = "/bin/bash"
-end
+end ]]
+-- commented to use toggleterm
 
 local options = {
   backup = false, -- creates a backup file

@@ -55,6 +55,12 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
   use "feline-nvim/feline.nvim" -- More customizable statusline plugin
 
+  -- Terminal
+  use {
+    "akinsho/toggleterm.nvim",
+    tag = "v1.*",
+  }
+
   -- Colorschemes
   use "folke/tokyonight.nvim"
 
