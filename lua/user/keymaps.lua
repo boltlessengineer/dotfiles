@@ -42,6 +42,8 @@ keymap("n", "N", "Nzzzv", opts)
 -- Insert --
 -- Press jk fast to exit Insert mode
 keymap("i", "jk", "<ESC>", opts)
+keymap("v", "jk", "<ESC>", opts)
+keymap("x", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
