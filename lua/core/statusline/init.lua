@@ -1,6 +1,10 @@
 local ok, feline = pcall(require, "feline")
 if not ok then return end
 
+-- TODO
+-- check here : https://github.com/brainfucksec/neovim-lua/blob/main/nvim/lua/core/statusline.lua
+-- and check here (to find feline alternatives, galaxyline) : https://github.com/CosmicNvim/CosmicNvim
+
 local vi_mode_utils = require("feline.providers.vi_mode")
 local lsp = require("feline.providers.lsp")
 
