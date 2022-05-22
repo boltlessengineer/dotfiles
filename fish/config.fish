@@ -13,6 +13,8 @@ if status is-interactive
   # Exported Variables
   set -gx PATH ~/.local/bin $PATH
 
+  set -gx EDITOR nvim
+
   ## Go
   set -gx GOROOT "$(brew --prefix golang)/libexec"
   set -gx GOPATH $HOME/go
