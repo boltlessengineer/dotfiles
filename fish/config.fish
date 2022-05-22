@@ -10,14 +10,14 @@ if status is-interactive
   alias ll="exa -lh --no-user"
   alias la="exa -lha --git --no-user"
 
-  # Global Variables
+  # Exported Variables
+  set -gx PATH ~/.local/bin $PATH
 
-  # Languages
   ## Go
-  set -x GOROOT "$(brew --prefix golang)/libexec"
-  set -x GOPATH $HOME/go
-  set -x PATH $PATH $GOROOT/bin $GOPATH/bin
+  set -gx GOROOT "$(brew --prefix golang)/libexec"
+  set -gx GOPATH $HOME/go
+  set -gx PATH $PATH $GOROOT/bin $GOPATH/bin
 
   ## Flutter
-  set -x PATH $PATH "/opt/homebrew/Caskroom/flutter/2.10.4/flutter/bin"
+  set -gx PATH $PATH "/opt/homebrew/Caskroom/flutter/2.10.4/flutter/bin"
 end
