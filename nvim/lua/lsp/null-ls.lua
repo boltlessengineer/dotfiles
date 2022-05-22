@@ -1,13 +1,15 @@
 -- null_ls vs diagnostic_ls
 local ok, null_ls = pcall(require, "null-ls")
-if not ok then return end
+if not ok then
+  return
+end
 
 local b = null_ls.builtins
 
 local eslintConfig = {
   condition = function(utils)
     return utils.root_has_file({ ".eslintrc.json" })
-  end
+  end,
 }
 
 null_ls.setup({
@@ -15,6 +17,7 @@ null_ls.setup({
   sources = {
     -- stylua (lua)
     -- > cargo install stylua
+    -- > brew install stylua
     b.formatting.stylua,
 
     -- eslint_d (js)
@@ -29,8 +32,8 @@ null_ls.setup({
     --   extra_args = { '--no-semi', "--single-quote", "--jsx-single-quote" },
     -- }), ]]
     b.formatting.prettier.with({
-      extra_args = { '--no-semi', '--single-quote', '--jsx-single-quote' }
-    })
+      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+    }),
   },
   on_attach = function(client)
     if client.resolved_capabilities.document_formatting then

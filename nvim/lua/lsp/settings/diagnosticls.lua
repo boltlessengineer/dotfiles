@@ -1,12 +1,12 @@
 return {
-  filetypes = {"javascript", "javascriptreact", "json", "typescript", "typescriptreact", "css", "less", "scss", "pandoc"},
+  filetypes = { "javascript", "javascriptreact", "json", "typescript", "typescriptreact", "css", "less", "scss", "pandoc" },
   init_options = {
     linters = {
       eslint = {
         command = "eslint_d",
-        rootPatterns = {".git"},
+        rootPatterns = { ".git" },
         debounce = 100,
-        args = {"--stdin", "--stdin-filename", "%filepath", "--format", "json"},
+        args = { "--stdin", "--stdin-filename", "%filepath", "--format", "json" },
         sourceName = "eslint_d",
         -- Using JSON
         parseJson = {
@@ -33,14 +33,14 @@ return {
     formatters = {
       eslint_d = {
         command = "eslint_d",
-        rootPatterns = {".git"},
-        args = {"--stdin", "--stdin-filename", "%filename", "--fix-to-stdout"},
+        rootPatterns = { ".git" },
+        args = { "--stdin", "--stdin-filename", "%filename", "--fix-to-stdout" },
       },
       prettier = {
         command = "prettier_d_slim",
-        rootPatterns = {".git"},
-        requiredFiles = {"prettier.config.js"},
-        args = {"--stdin", "--stdin-filepath", "%filename"}
+        rootPatterns = { ".git" },
+        requiredFiles = { "prettier.config.js" },
+        args = { "--stdin", "--stdin-filepath", "%filename" }
       }
     },
     formatFiletypes = {
