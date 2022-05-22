@@ -16,8 +16,8 @@ end
 -- Or register handlers on specific server instances.
 lsp_installer.on_server_ready(function(server)
   local opts = {
-    on_attach = require("lsp.handlers").on_attach,
-    capabilities = require("lsp.handlers").capabilities,
+    on_attach = require("core.lsp.handlers").on_attach,
+    capabilities = require("core.lsp.handlers").capabilities,
   }
 
   -- if server.name == "jsonls" then
@@ -26,18 +26,18 @@ lsp_installer.on_server_ready(function(server)
   -- end
 
   if server.name == "sumneko_lua" then
-    local sumneko_opts = require("lsp.settings.sumneko_lua")
+    local sumneko_opts = require("core.lsp.settings.sumneko_lua")
     opts = vim.tbl_deep_extend("force", opts, sumneko_opts)
   end
 
   if server.name == "tsserver" then
-    local tsserver_opts = require("lsp.settings.tsserver")
+    local tsserver_opts = require("core.lsp.settings.tsserver")
     opts = vim.tbl_deep_extend("force", opts, tsserver_opts)
   end
 
   -- TODO: Remove diagnosticls settings
   if server.name == "diagnosticls" then
-    local diagnostics_opts = require("lsp.settings.diagnosticls")
+    local diagnostics_opts = require("core.lsp.settings.diagnosticls")
     opts = vim.tbl_deep_extend("force", diagnostics_opts, opts)
   end
 

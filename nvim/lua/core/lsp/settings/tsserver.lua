@@ -1,5 +1,5 @@
 -- local ts_utils = require("nvim-lsp-ts-utils")
-local h = require("lsp.handlers")
+local h = require("core.lsp.handlers")
 
 return {
   filetypes = {

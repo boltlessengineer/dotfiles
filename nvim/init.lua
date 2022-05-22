@@ -2,8 +2,7 @@ require "core.options"
 require "core.keymaps"
 require "core.plugins"
 require "core.colorscheme"
-
-require "lsp"
+require "core.lsp"
 
 require "plugins.cmp"
 require "plugins.telescope"
