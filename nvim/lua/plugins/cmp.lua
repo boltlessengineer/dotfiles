@@ -1,15 +1,19 @@
 local cmp_ok, cmp = pcall(require, "cmp")
-if not cmp_ok then return end
+if not cmp_ok then
+  return
+end
 
 local snip_ok, luasnip = pcall(require, "luasnip")
-if not snip_ok then return end
+if not snip_ok then
+  return
+end
 luasnip.filetype_extend("dart", { "flutter" })
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
 end
 
 --   פּ ﯟ   some other good icons
@@ -49,8 +53,8 @@ cmp.setup {
     end,
   },
   mapping = {
-    ['<C-k>'] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-    ['<C-j>'] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+    ["<C-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+    ["<C-j>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-l>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),

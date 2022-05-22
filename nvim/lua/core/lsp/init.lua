@@ -3,6 +3,6 @@ if not ok then return end
 
 require("core.lsp.lsp-installer")
 require("core.lsp.handlers").setup()
--- require("lsp.null-ls")
+require("core.lsp.null-ls")
 
--- require("lsp.specifics.flutter")
+-- require("core.lsp.specifics.flutter")

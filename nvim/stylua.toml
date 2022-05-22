@@ -1,1 +1,2 @@
-call_parentheses=None
+quote_style = "AutoPreferDouble"
+call_parentheses = "None"

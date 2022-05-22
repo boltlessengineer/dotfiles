@@ -1,5 +1,7 @@
 local ok, comment = pcall(require, "Comment")
-if not ok then return end
+if not ok then
+  return
+end
 
 comment.setup {
   mappings = {
@@ -8,7 +10,7 @@ comment.setup {
     extended = false,
   },
   pre_hook = function(ctx)
-    if vim.bo.filetype == 'typescriptreact' then
+    if vim.bo.filetype == "typescriptreact" then
       local U = require "Comment.utils"
 
       local location = nil
@@ -24,7 +26,7 @@ comment.setup {
         location = location,
       }
     end
-  end
+  end,
 }
 
 local function map(mode, lhs, rhs)
@@ -33,9 +35,9 @@ end
 
 -- Mappings
 -- Linewise commnet toggle using Ctrl-/ (e.g. // some comment)
-map('n', '<C-_>', ':lua require("Comment.api").toggle_current_linewise()<CR>')
-map('v', '<C-_>', ':lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+map("n", "<C-_>", ':lua require("Comment.api").toggle_current_linewise()<CR>')
+map("v", "<C-_>", ':lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
 
 -- Blockwise comment toggle using Ctrl-\ (e.g. /* some comment */)
-map('n', '<C-\\>', ':lua require("Comment.api").toggle_current_blockwise()<CR>')
-map('v', '<C-\\>', ':lua require("Comment.api").toggle_blockwise_op(vim.fn.visualmode())<CR>')
+map("n", "<C-\\>", ':lua require("Comment.api").toggle_current_blockwise()<CR>')
+map("v", "<C-\\>", ':lua require("Comment.api").toggle_blockwise_op(vim.fn.visualmode())<CR>')

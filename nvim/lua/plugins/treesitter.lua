@@ -1,21 +1,39 @@
 local ok, tsconfigs = pcall(require, "nvim-treesitter.configs")
-if not ok then return end
+if not ok then
+  return
+end
 
 local loved_parsers = {
   "bash",
-  "c", "c_sharp", "comment", "cpp", "css",
-  "dart", "dockerfile",
+  "c",
+  "c_sharp",
+  "comment",
+  "cpp",
+  "css",
+  "dart",
+  "dockerfile",
   "fish",
-  "go", "gomod",
+  "go",
+  "gomod",
   "html",
-  "javascript", "json",
+  "javascript",
+  "json",
   "lua",
   "markdown",
-  "php", "python", "pug",
-  "ruby", "rust",
-  "scss", "solidity", "svelte", "swift",
-  "toml", "tsx", "typescript",
-  "vim", "vue",
+  "php",
+  "python",
+  "pug",
+  "ruby",
+  "rust",
+  "scss",
+  "solidity",
+  "svelte",
+  "swift",
+  "toml",
+  "tsx",
+  "typescript",
+  "vim",
+  "vue",
   "yaml",
 }
 

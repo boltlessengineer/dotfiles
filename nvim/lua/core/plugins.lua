@@ -27,7 +27,9 @@ vim.cmd [[
 
 -- Use a protected call so we don't error out on first use
 local ok, packer = pcall(require, "packer")
-if not ok then return end
+if not ok then
+  return
+end
 
 -- Have packer use a popup window
 packer.init {
@@ -94,7 +96,7 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git
   use "lewis6991/gitsigns.nvim"
