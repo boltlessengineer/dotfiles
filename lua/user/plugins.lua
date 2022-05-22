@@ -54,6 +54,7 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   use "feline-nvim/feline.nvim" -- More customizable statusline plugin
+  use "folke/which-key.nvim" -- TODO
 
   -- Terminal
   use {
