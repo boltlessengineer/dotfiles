@@ -2,10 +2,10 @@ require "core.options"
 require "core.keymaps"
 require "core.plugins"
 require "core.colorscheme"
-require "plugins.cmp"
 
 require "lsp"
 
+require "plugins.cmp"
 require "plugins.telescope"
 require "plugins.treesitter"
 require "plugins.comment"
