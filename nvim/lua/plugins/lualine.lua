@@ -3,9 +3,13 @@ if not ok then
   return
 end
 
+-- TODO: Terminal mode specific statusline
+--       Customizable, well-documented alternative
+--       : rebelot/heirline.nvim
+
 lualine.setup {
   options = {
-    disabled_filetypes = { "alpha", "dashboard", "toggleterm" },
+    disabled_filetypes = { "alpha", "dashboard" },
     globalstatus = true,
   },
   sections = {
