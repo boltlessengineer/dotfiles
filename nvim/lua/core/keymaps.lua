@@ -31,7 +31,7 @@ keymap("n", "<Tab>", ":tabnext<CR>", opts)
 keymap("n", "<S-Tab>", ":tabprev<CR>", opts)
 keymap("n", "<leader>t", ":tabnew ", { noremap = true })
 
-keymap("n", "<leader>l", ":lua ", { noremap = true })
+-- keymap("n", "<leader>l", ":lua ", { noremap = true })
 
 keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
 
