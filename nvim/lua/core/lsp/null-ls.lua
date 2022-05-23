@@ -18,7 +18,7 @@ null_ls.setup({
     -- stylua (lua)
     -- > cargo install stylua
     -- > brew install stylua
-    b.formatting.stylua,
+    -- b.formatting.stylua,
 
     -- eslint_d (js)
     -- > npm install -g eslint_d
