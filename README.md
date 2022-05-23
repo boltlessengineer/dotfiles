@@ -8,7 +8,7 @@ git clone 'https://github.com/boltlessengineer/dotfiles.git'
 cd dotfiles
 
 # install neovim config
-ln -s ./nvim ~/.config/nvim
+ln -shf ./nvim ~/.config/nvim
 
 # install fish config
 ln -s ./fish ~/.config/fish
