@@ -54,6 +54,7 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-tree.lua" -- File explorer written in lua
   use "akinsho/bufferline.nvim"
   use "nvim-lualine/lualine.nvim"
+  use "goolord/alpha-nvim"
   use "folke/which-key.nvim" -- TODO
 
   -- Terminal
