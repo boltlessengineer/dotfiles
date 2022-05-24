@@ -41,8 +41,10 @@ local mappings = {
   l = {
     name = "Lsp",
     a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
-    i = { "<cmd>LspInfo<CR>", "Info" },
+    D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
+    d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
     I = { "<cmd>LspInstallInfo<CR>", "Installer Info" },
+    i = { "<cmd>LspInfo<CR>", "Info" },
     j = {
       "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
       "Next Diagnostic",

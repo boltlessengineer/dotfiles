@@ -67,21 +67,22 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+  vim.notify(client.name .. " starting...")
 
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'lua.vim.lsp.omnifunc')
 
-  if client.resolved_capabilities.document_formatting then
-    vim.api.nvim_exec(
-      [[
-      augroup Format
-        autocmd! * <buffer>
-        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
-      augroup END
-      ]],
-      false
-    )
-  end
+  -- if client.resolved_capabilities.document_formatting then
+  --   vim.api.nvim_exec(
+  --     [[
+  --     augroup Format
+  --       autocmd! * <buffer>
+  --       autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+  --     augroup END
+  --     ]],
+  --     false
+  --   )
+  -- end
 
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
@@ -93,5 +94,33 @@ local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not ok then return end
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+
+function M.enable_format_on_save()
+  vim.cmd [[
+    augroup format_on_save
+      autocmd!
+      autocmd BufWritePre * lua vim.lsp.buf.formatting_seq_sync()
+    augroup end
+  ]]
+  vim.notify("Enabled format on save")
+end
+
+function M.disable_format_on_save()
+  local name = "format_on_save"
+  if vim.fn.exists("#" .. name) == 1 then
+    vim.api.nvim_del_augroup_by_name(name)
+  end
+  vim.notify("Disabled format on save")
+end
+
+function M.toggle_format_on_save()
+  if vim.fn.exists "#format_on_save#BufWritePre" == 0 then
+    M.enable_format_on_save()
+  else
+    M.disable_format_on_save()
+  end
+end
+
+vim.api.nvim_create_user_command("LspToggleAutoFormat", M.toggle_format_on_save, {})
 
 return M
