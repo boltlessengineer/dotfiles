@@ -82,6 +82,7 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "RRethy/vim-illuminate" -- highlighting other uses of a word
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "jose-elias-alvarez/nvim-lsp-ts-utils" -- typescript dev utils
   -- Language specific plugins (doesn't depend on nvim-lspconfg)
