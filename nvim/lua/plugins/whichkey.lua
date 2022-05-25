@@ -55,6 +55,7 @@ local mappings = {
     },
     r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
   },
+  q = { "<cmd>bdelete<CR>", "Quit Buffer" },
   ["<leader>"] = {
     name = "Terminal",
     ["1"] = { "<cmd>1ToggleTerm<CR>", "1" },
