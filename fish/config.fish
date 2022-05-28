@@ -4,7 +4,7 @@ if status is-interactive
   zoxide init fish | source
 
   # Aliases
-  alias ls="exa"
+  alias l="exa"
   alias lt="exa -T"
   alias lT="exa -Tlh --no-user --no-time"
   alias ll="exa -lh --no-user"
