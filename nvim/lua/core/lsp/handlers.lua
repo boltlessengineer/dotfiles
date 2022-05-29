@@ -67,8 +67,6 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  vim.notify(client.name .. " starting...")
-
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'lua.vim.lsp.omnifunc')
 

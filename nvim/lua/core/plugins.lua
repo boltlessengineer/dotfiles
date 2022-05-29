@@ -55,7 +55,7 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
   use "nvim-lualine/lualine.nvim"
   use "goolord/alpha-nvim"
-  use "folke/which-key.nvim" -- TODO
+  use "folke/which-key.nvim"
 
   -- Terminal
   use {
@@ -96,6 +96,7 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+  use "nvim-treesitter/playground"
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git
