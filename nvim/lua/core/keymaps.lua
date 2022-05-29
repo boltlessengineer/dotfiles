@@ -34,6 +34,8 @@ keymap("n", "<leader>t", ":tabnew ", { noremap = true })
 -- keymap("n", "<leader>l", ":lua ", { noremap = true })
 
 keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
+keymap("n", "-", ":lua require('notify').dismiss()<CR>", opts)
+keymap("n", "+", ":Notifications<CR>", opts)
 
 -- Keeping search results centered
 keymap("n", "n", "nzzzv", opts)
