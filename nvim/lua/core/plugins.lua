@@ -57,6 +57,7 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "folke/which-key.nvim"
   use "rcarriga/nvim-notify"
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- Terminal
   use {
