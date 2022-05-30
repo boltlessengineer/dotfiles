@@ -18,6 +18,10 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
+-- keymap("n", "<C-h>", "<C-w><C-h>", opts)
+-- keymap("n", "<C-j>", "<C-w><C-j>", opts)
+-- keymap("n", "<C-k>", "<C-w><C-k>", opts)
+-- keymap("n", "<C-l>", "<C-w><C-l>", opts)
 
 -- Resize with arrows
 
@@ -31,9 +35,8 @@ keymap("n", "<Tab>", ":tabnext<CR>", opts)
 keymap("n", "<S-Tab>", ":tabprev<CR>", opts)
 keymap("n", "<leader>t", ":tabnew ", { noremap = true })
 
--- keymap("n", "<leader>l", ":lua ", { noremap = true })
+keymap("n", "`", ":NvimTreeToggle<CR>", opts)
 
-keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
 keymap("n", "-", ":lua require('notify').dismiss()<CR>", opts)
 keymap("n", "+", ":Notifications<CR>", opts)
 
