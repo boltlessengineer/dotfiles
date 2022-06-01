@@ -67,9 +67,6 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'lua.vim.lsp.omnifunc')
-
   -- if client.resolved_capabilities.document_formatting then
   --   vim.api.nvim_exec(
   --     [[
