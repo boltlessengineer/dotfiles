@@ -1,7 +1,11 @@
 -- Tokyonight config
+
 vim.g.tokyonight_style = "night"
-vim.g.tokyonight_transparent = true
-vim.g.tokyonight_transparent_sidebar = true
+-- Add transparent in graphical applications
+if vim.cmd("echo $TERM") ~= "" then
+  vim.g.tokyonight_transparent = true
+  vim.g.tokyonight_transparent_sidebar = true
+end
 
 local colorscheme = "tokyonight"
 
