@@ -1,11 +1,3 @@
--- Change fish to bash
--- check this issue: https://github.com/kyazdani42/nvim-tree.lua/issues/549
---[[ local fish = "fish"
-if vim.o.shell:sub(- #fish) == fish then
-  vim.opt.shell = "/bin/bash"
-end ]]
--- commented to use toggleterm
-
 local options = {
   backup = false, -- creates a backup file
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
@@ -41,7 +33,7 @@ local options = {
   wrap = false, -- display lines as one long line
   scrolloff = 8, -- is one of my fav
   sidescrolloff = 8,
-  -- guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  guifont = "FiraCode Nerd Font:h16",               -- the font used in graphical neovim applications
   whichwrap = "<,>,[,]",
 }
 
