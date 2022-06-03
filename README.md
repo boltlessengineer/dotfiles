@@ -45,11 +45,12 @@ chsh -s "$(where fish)"
 # Some programs should be installed first
 fish --no-config
 
-# 
+#
 
 fisher update
 ```
 
 # TODO
+
 - [ ] Test this in new Mac
 - [ ] Add Brewfile
