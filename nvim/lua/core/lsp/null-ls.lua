@@ -31,8 +31,8 @@ null_ls.setup({
     -- b.formatting.prettier_d_slim--[[ .with({
     --   extra_args = { '--no-semi', "--single-quote", "--jsx-single-quote" },
     -- }), ]]
-    b.formatting.prettier.with({
-      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+    b.formatting.prettierd.with({
+      -- extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     }),
   },
   on_attach = function(client)
