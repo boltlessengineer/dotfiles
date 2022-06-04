@@ -37,6 +37,8 @@ local mappings = {
   g = {
     name = "Git",
     s = { "<cmd>Telescope git_status<CR>", "Status" },
+    d = { "<cmd>DiffviewOpen<CR>", "Diff view" },
+    l = { "<cmd>lua _Lazygit_toggle()<CR>", "LazyGit" },
   },
   l = {
     name = "Lsp",

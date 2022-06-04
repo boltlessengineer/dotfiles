@@ -3,6 +3,18 @@ if not ok then
   return
 end
 
+local Terminal = require("toggleterm.terminal").Terminal
+
+function _Lazygit_toggle()
+  local lazygit = Terminal:new({
+    cmd = "lazygit",
+    hidden = true,
+    dir = "git_dir",
+    direction = "float",
+  })
+  lazygit:toggle()
+end
+
 toggleterm.setup {
   size = function(term)
     if term.direction == "horizontal" then
