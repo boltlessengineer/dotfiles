@@ -59,6 +59,15 @@ return packer.startup(function(use)
   use "rcarriga/nvim-notify"
   use "lukas-reineke/indent-blankline.nvim"
 
+  -- Note
+  use "nvim-neorg/neorg"
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = function ()
+      vim.fn["mkdp#util#install"]()
+    end,
+  }
+
   -- Terminal
   use {
     "akinsho/toggleterm.nvim",
