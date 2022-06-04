@@ -50,6 +50,12 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "jk", "<ESC>", opts)
 keymap("x", "jk", "<ESC>", opts)
 
+-- TODO using clipboard in graphical applications
+-- https://github.com/neovide/neovide/issues/1282#issuecomment-1108646687
+-- keymap("i", "???", '"+p', opts)
+-- keymap("v", "???", '"+y', opts)
+-- keymap("v", "???", '"+p', opts)
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)

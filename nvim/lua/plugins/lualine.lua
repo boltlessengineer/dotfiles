@@ -7,6 +7,9 @@ end
 --       Customizable, well-documented alternative
 --       : rebelot/heirline.nvim
 
+-- TODO: LSP progress message
+--       check : nvim-lua/lsp-status.nvim
+
 lualine.setup {
   options = {
     disabled_filetypes = { "alpha", "dashboard" },
