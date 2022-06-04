@@ -63,7 +63,7 @@ return packer.startup(function(use)
   use "nvim-neorg/neorg"
   use {
     "iamcco/markdown-preview.nvim",
-    run = function ()
+    run = function()
       vim.fn["mkdp#util#install"]()
     end,
   }
@@ -112,6 +112,10 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use {
+    "sindrets/diffview.nvim", -- single tabpage interface for git diff
+    requires = "nvim-lua/plenary.nvim",
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -42,3 +42,4 @@ for k, v in pairs(options) do
 end
 
 vim.opt.shortmess:append "c"
+vim.opt.fillchars = "diff:╱" -- TODO: change to dotted slash & change colorscheme to Normal
