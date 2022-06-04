@@ -6,28 +6,28 @@
 
 1. Install Apple's Command Line Tools, which are prerequisites for Git and Homebrew
 
-```bash
-xcode-select --install
-```
+   ```bash
+   xcode-select --install
+   ```
 
 2. Clone repo into new hidden directory
 
-```bash
-git clone https://github.com/boltlessengineer/dotfiles ~/.dotfiles
-```
+   ```bash
+   git clone https://github.com/boltlessengineer/dotfiles ~/.dotfiles
+   ```
 
 3. Create symlinks in the $HOME directory to the real files in the repo
 
-```bash
-# install neovim config
-ln -shf ./nvim ~/.config/nvim
+   ```bash
+   # install neovim config
+   ln -shf ./nvim ~/.config/nvim
 
-# install fish config
-ln -shf ./fish ~/.config/fish
+   # install fish config
+   ln -shf ./fish ~/.config/fish
 
-# install lf config
-ln -shf ./lf ~/.config/lf
-```
+   # install lf config
+   ln -shf ./lf ~/.config/lf
+   ```
 
 ### install fish
 
