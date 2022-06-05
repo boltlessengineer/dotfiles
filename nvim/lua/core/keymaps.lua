@@ -52,9 +52,11 @@ keymap("x", "jk", "<ESC>", opts)
 
 -- TODO using clipboard in graphical applications
 -- https://github.com/neovide/neovide/issues/1282#issuecomment-1108646687
--- keymap("i", "???", '"+p', opts)
--- keymap("v", "???", '"+y', opts)
--- keymap("v", "???", '"+p', opts)
+-- `"+y` to copy, `"+p` to paste
+-- `<D-` stands for super key. see `:h <D-`
+vim.g.neovide_input_use_logo = true
+keymap("v", "<D-c>", '<cmd>echo "want to copy"<CR>', opts)
+keymap("v", "<D-v>", '<cmd>echo "want to paste"<CR>', opts)
 
 -- Visual --
 -- Stay in indent mode
