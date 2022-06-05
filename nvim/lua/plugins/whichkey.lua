@@ -4,7 +4,13 @@ if not status_ok then return end
 which_key.setup({
   plugins = {
     presets = {
-      operators = false,
+      operators = true,
+      motions = false,
+      text_objects = false,
+      windows = true,
+      nav = true,
+      z = true,
+      g = false,
     },
   },
   key_labels = {
@@ -29,6 +35,7 @@ local opts = {
 
 local mappings = {
   a = { "<cmd>Alpha<CR>", "Alpha" },
+  b = { "<cmd>Telescope buffers<CR>", "Buffers" },
   f = {
     name = "File",
     f = { "<cmd>Telescope find_files<CR>", "Find" },
