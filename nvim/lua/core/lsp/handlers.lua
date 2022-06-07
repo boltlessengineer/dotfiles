@@ -116,6 +116,4 @@ function M.toggle_format_on_save()
   end
 end
 
-vim.api.nvim_create_user_command("LspToggleAutoFormat", M.toggle_format_on_save, {})
-
 return M

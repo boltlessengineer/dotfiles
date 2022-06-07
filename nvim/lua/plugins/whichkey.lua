@@ -52,6 +52,7 @@ local mappings = {
     a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
     D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
     d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
+    f = { "<cmd>lua require('core.lsp.handlers').toggle_format_on_save()<CR>", "Toggle AutoFormat" },
     I = { "<cmd>LspInstallInfo<CR>", "Installer Info" },
     i = { "<cmd>LspInfo<CR>", "Info" },
     j = {
