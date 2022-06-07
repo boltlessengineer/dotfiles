@@ -13,6 +13,14 @@ return {
         disable = { "different-requires" },
         globals = { "vim" },
       },
+      format = {
+        -- NOTE: refer these for configuration documents.
+        -- https://github.com/sumneko/lua-language-server/wiki/Code-Formatter
+        -- https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/docs/format_config_EN.md
+        defaultConfig = {
+          quote_style = "single",
+        },
+      },
       workspace = {
         library = {
           vim.fn.expand("$VIMRUNTIME/lua"),
