@@ -72,6 +72,21 @@ tsconfigs.setup {
     enable = true,
   },
   indent = { enable = true, disable = { "yaml" } },
+  textobjects = {
+    select = {
+      enable = true,
+
+      -- Automatically jump forward to textobj, similar to targets.vim
+      lookahead = true,
+
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.outer",
+      },
+    },
+  },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
