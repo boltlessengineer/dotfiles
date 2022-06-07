@@ -1,10 +1,10 @@
 -- local ts_utils = require("nvim-lsp-ts-utils")
-local h = require("core.lsp.handlers")
+local h = require('core.lsp.handlers')
 
 return {
   filetypes = {
-    "javascript", "javascriptreact", "javascript.jsx",
-    "typescript", "typescriptreact", "typescript.tsx"
+    'javascript', 'javascriptreact', 'javascript.jsx',
+    'typescript', 'typescriptreact', 'typescript.tsx'
   },
   on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false

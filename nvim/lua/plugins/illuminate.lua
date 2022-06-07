@@ -1,1 +1,1 @@
-vim.g.Illuminate_ftblacklist = {'alpha', 'NvimTree', 'help', 'markdown'}
+vim.g.Illuminate_ftblacklist = { 'alpha', 'NvimTree', 'help', 'markdown' }

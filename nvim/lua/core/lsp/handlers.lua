@@ -2,14 +2,14 @@ local M = {}
 
 M.setup = function()
   local signs = {
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
+    { name = 'DiagnosticSignError', text = '' },
+    { name = 'DiagnosticSignWarn', text = '' },
+    { name = 'DiagnosticSignHint', text = '' },
+    { name = 'DiagnosticSignInfo', text = '' },
   }
 
   for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
   end
 
   vim.diagnostic.config({
@@ -24,27 +24,27 @@ M.setup = function()
     severity_sort = true,
     float = {
       focusable = false,
-      style = "minimal",
-      border = "rounded",
-      source = "always",
-      header = "",
-      prefix = "",
+      style = 'minimal',
+      border = 'rounded',
+      source = 'always',
+      header = '',
+      prefix = '',
     },
   })
 
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
+  vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = 'rounded',
   })
 
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "rounded",
+  vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    border = 'rounded',
   })
 end
 
 local function lsp_highlight_document(client)
   -- TODO: check if `resolved_capabilities` also works in v0.8 (nightly)
   if client.resolved_capabilities.document_highlight then
-    local status_ok, illuminate = pcall(require, "illuminate")
+    local status_ok, illuminate = pcall(require, 'illuminate')
     if not status_ok then
       return
     end
@@ -85,7 +85,7 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+local ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
 if not ok then return end
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
@@ -97,19 +97,19 @@ function M.enable_format_on_save()
       autocmd BufWritePre * lua vim.lsp.buf.formatting_seq_sync()
     augroup end
   ]]
-  vim.notify("Enabled format on save")
+  vim.notify('Enabled format on save')
 end
 
 function M.disable_format_on_save()
-  local name = "format_on_save"
-  if vim.fn.exists("#" .. name) == 1 then
+  local name = 'format_on_save'
+  if vim.fn.exists('#' .. name) == 1 then
     vim.api.nvim_del_augroup_by_name(name)
   end
-  vim.notify("Disabled format on save")
+  vim.notify('Disabled format on save')
 end
 
 function M.toggle_format_on_save()
-  if vim.fn.exists "#format_on_save#BufWritePre" == 0 then
+  if vim.fn.exists '#format_on_save#BufWritePre' == 0 then
     M.enable_format_on_save()
   else
     M.disable_format_on_save()

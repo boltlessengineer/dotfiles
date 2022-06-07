@@ -1,4 +1,4 @@
-require("flutter-tools").setup {
+require('flutter-tools').setup {
   decorations = {
     statusline = {
       app_version = true,
@@ -6,7 +6,7 @@ require("flutter-tools").setup {
     }
   },
   lsp = {
-    on_attach = require("user.lsp.handlers").on_attach,
-    capabilities = require("user.lsp.handlers").capabilities,
+    on_attach = require('user.lsp.handlers').on_attach,
+    capabilities = require('user.lsp.handlers').capabilities,
   }
 }

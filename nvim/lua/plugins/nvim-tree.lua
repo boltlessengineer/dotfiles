@@ -1,9 +1,9 @@
-local ok, nvim_tree = pcall(require, "nvim-tree")
+local ok, nvim_tree = pcall(require, 'nvim-tree')
 if not ok then
   return
 end
 
-local config_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
+local config_ok, nvim_tree_config = pcall(require, 'nvim-tree.config')
 if not config_ok then
   return
 end
@@ -17,9 +17,9 @@ nvim_tree.setup {
   hijack_netrw = true,
   open_on_setup = false,
   ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
+    'startify',
+    'dashboard',
+    'alpha',
   },
   open_on_tab = false,
   update_cwd = true,
@@ -27,13 +27,13 @@ nvim_tree.setup {
     width = 30,
     height = 30,
     hide_root_folder = false,
-    side = "left",
+    side = 'left',
     mappings = {
       custom_only = false,
       list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
+        { key = { 'l', '<CR>', 'o' }, cb = tree_cb 'edit' },
+        { key = 'h', cb = tree_cb 'close_node' },
+        { key = 'v', cb = tree_cb 'vsplit' },
       },
     },
     number = false,
@@ -42,26 +42,26 @@ nvim_tree.setup {
   renderer = {
     icons = {
       glyphs = {
-        default = "",
-        symlink = "",
+        default = '',
+        symlink = '',
         folder = {
-          arrow_closed = "",
-          arrow_open = "",
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = "",
-          symlink = "",
-          symlink_open = "",
+          arrow_closed = '',
+          arrow_open = '',
+          default = '',
+          open = '',
+          empty = '',
+          empty_open = '',
+          symlink = '',
+          symlink_open = '',
         },
         git = {
-          unstaged = "✗",
-          staged = "✓",
-          unmerged = "",
-          renamed = "➜",
-          untracked = "?",
-          deleted = "",
-          ignored = "◌",
+          unstaged = '✗',
+          staged = '✓',
+          unmerged = '',
+          renamed = '➜',
+          untracked = '?',
+          deleted = '',
+          ignored = '◌',
         },
       }
     }
@@ -69,10 +69,10 @@ nvim_tree.setup {
   diagnostics = {
     enable = true,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = '',
+      info = '',
+      warning = '',
+      error = '',
     },
   },
   update_focused_file = {
@@ -94,7 +94,7 @@ nvim_tree.setup {
     timeout = 400,
   },
   trash = {
-    cmd = "trash",
+    cmd = 'trash',
     require_confirm = true,
   },
   actions = {

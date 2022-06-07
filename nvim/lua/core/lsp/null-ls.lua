@@ -1,5 +1,5 @@
 -- null_ls vs diagnostic_ls
-local ok, null_ls = pcall(require, "null-ls")
+local ok, null_ls = pcall(require, 'null-ls')
 if not ok then
   return
 end
@@ -8,7 +8,7 @@ local b = null_ls.builtins
 
 local eslintConfig = {
   condition = function(utils)
-    return utils.root_has_file({ ".eslintrc.json" })
+    return utils.root_has_file({ '.eslintrc.json' })
   end,
 }
 

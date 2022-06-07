@@ -1,40 +1,40 @@
-local ok, tsconfigs = pcall(require, "nvim-treesitter.configs")
+local ok, tsconfigs = pcall(require, 'nvim-treesitter.configs')
 if not ok then
   return
 end
 
 local loved_parsers = {
-  "bash",
-  "c",
-  "c_sharp",
-  "comment",
-  "cpp",
-  "css",
-  "dart",
-  "dockerfile",
-  "fish",
-  "go",
-  "gomod",
-  "html",
-  "javascript",
-  "json",
-  "lua",
-  "markdown",
-  "php",
-  "python",
-  "pug",
-  "ruby",
-  "rust",
-  "scss",
-  "solidity",
-  "svelte",
-  "swift",
-  "toml",
-  "tsx",
-  "typescript",
-  "vim",
-  "vue",
-  "yaml",
+  'bash',
+  'c',
+  'c_sharp',
+  'comment',
+  'cpp',
+  'css',
+  'dart',
+  'dockerfile',
+  'fish',
+  'go',
+  'gomod',
+  'html',
+  'javascript',
+  'json',
+  'lua',
+  'markdown',
+  'php',
+  'python',
+  'pug',
+  'ruby',
+  'rust',
+  'scss',
+  'solidity',
+  'svelte',
+  'swift',
+  'toml',
+  'tsx',
+  'typescript',
+  'vim',
+  'vue',
+  'yaml',
 }
 
 tsconfigs.setup {
@@ -56,7 +56,7 @@ tsconfigs.setup {
     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
     -- the name of the parser)
     -- list of language that will be diagnostic_disabled
-    disable = { "" },
+    disable = { '' },
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
@@ -71,7 +71,7 @@ tsconfigs.setup {
   autotag = {
     enable = true,
   },
-  indent = { enable = true, disable = { "yaml" } },
+  indent = { enable = true, disable = { 'yaml' } },
   textobjects = {
     select = {
       enable = true,
@@ -80,10 +80,10 @@ tsconfigs.setup {
       lookahead = true,
 
       keymaps = {
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@class.outer",
-        ["ic"] = "@class.outer",
+        ['af'] = '@function.outer',
+        ['if'] = '@function.inner',
+        ['ac'] = '@class.outer',
+        ['ic'] = '@class.outer',
       },
     },
   },
