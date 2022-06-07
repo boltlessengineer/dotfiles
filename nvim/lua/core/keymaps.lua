@@ -1,69 +1,68 @@
-local opts = { noremap = true, silent = true }
-
 -- Shorten function name
--- TODO: change keymap() to vim.keymap.set()
-local keymap = vim.api.nvim_set_keymap
+local set = vim.keymap.set
+-- local del = vim.keymap.del
 
 -- Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+set("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Modes
---   normal_mode = "n"
---   insert_mode = "i"
---   visual_mode = "v"
---   visual_block_mode = "x"
---   term_mode = "t"
---   command_mode = "c"
+--   n : normal_mode
+--   i : insert_mode
+--   v : visual_mode
+--   x : visual_block_mode
+--   t : term_mode
+--   c : command_mode
 
 -- Normal --
 -- Better window navigation
--- keymap("n", "<C-h>", "<C-w><C-h>", opts)
--- keymap("n", "<C-j>", "<C-w><C-j>", opts)
--- keymap("n", "<C-k>", "<C-w><C-k>", opts)
--- keymap("n", "<C-l>", "<C-w><C-l>", opts)
+-- set("n", "<C-h>", "<C-w><C-h>")
+-- set("n", "<C-j>", "<C-w><C-j>")
+-- set("n", "<C-k>", "<C-w><C-k>")
+-- set("n", "<C-l>", "<C-w><C-l>")
 
 -- Resize with arrows
+set("n", "<C-w><Up>", "<C-w>+")
+set("n", "<C-w><Down>", "<C-w>-")
+set("n", "<C-w><Left>", "<C-w><")
+set("n", "<C-w><Right>", "<C-w>>")
 
 -- Navigate buffers
-keymap("n", "<Right>", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "<Left>", ":BufferLineCyclePrev<CR>", opts)
--- keymap("n", "<leader>b", ":e ", { noremap = true })
+set("n", "<Right>", "<cmd>BufferLineCycleNext<CR>")
+set("n", "<Left>", "<cmd>BufferLineCyclePrev<CR>")
 
 -- Navigate tabs
-keymap("n", "<Tab>", ":tabnext<CR>", opts)
-keymap("n", "<S-Tab>", ":tabprev<CR>", opts)
-keymap("n", "<leader>t", ":tabnew ", { noremap = true })
+set("n", "<Tab>", "<cmd>tabnext<CR>")
+set("n", "<S-Tab>", "<cmd>tabprev<CR>")
+set("n", "<leader>t", ":tabnew ", { noremap = true })
 
-keymap("n", "`", ":NvimTreeToggle<CR>", opts)
+set("n", "`", "<cmd>NvimTreeToggle<CR>")
 
-keymap("n", "-", ":lua require('notify').dismiss()<CR>", opts)
-keymap("n", "+", ":Notifications<CR>", opts)
+set("n", "-", require('notify').dismiss)
+set("n", "+", "<cmd>Notifications<CR>")
 
 -- Keeping search results centered
-keymap("n", "n", "nzzzv", opts)
-keymap("n", "N", "Nzzzv", opts)
+set("n", "n", "nzzzv")
+set("n", "N", "Nzzzv")
 
 -- Insert --
 -- Press jk fast to exit Insert mode
-keymap("i", "jk", "<ESC>", opts)
-keymap("v", "jk", "<ESC>", opts)
-keymap("x", "jk", "<ESC>", opts)
+set({ "i", "v", "x" }, "jk", "<ESC>")
 
 -- TODO using clipboard in graphical applications
 -- https://github.com/neovide/neovide/issues/1282#issuecomment-1108646687
 -- `"+y` to copy, `"+p` to paste
 -- `<D-` stands for super key. see `:h <D-`
 vim.g.neovide_input_use_logo = true
-keymap("v", "<D-c>", '<cmd>echo "want to copy"<CR>', opts)
-keymap("v", "<D-v>", '<cmd>echo "want to paste"<CR>', opts)
+set("v", "<D-c>", '<cmd>echo "want to copy"<CR>')
+set("v", "<D-v>", '<cmd>echo "want to paste"<CR>')
 
 -- Visual --
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+set("v", "<", "<gv")
+set("v", ">", ">gv")
 
 -- Move text opt and down
-keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+set("v", "J", ":m '>+1<CR>gv=gv")
+set("v", "K", ":m '<-2<CR>gv=gv")
