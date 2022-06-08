@@ -3,39 +3,7 @@ if not ok then
   return
 end
 
-local loved_parsers = {
-  'bash',
-  'c',
-  'c_sharp',
-  'comment',
-  'cpp',
-  'css',
-  'dart',
-  'dockerfile',
-  'fish',
-  'go',
-  'gomod',
-  'html',
-  'javascript',
-  'json',
-  'lua',
-  'markdown',
-  'php',
-  'python',
-  'pug',
-  'ruby',
-  'rust',
-  'scss',
-  'solidity',
-  'svelte',
-  'swift',
-  'toml',
-  'tsx',
-  'typescript',
-  'vim',
-  'vue',
-  'yaml',
-}
+local loved_parsers = require('plugins.treesitter.parsers')
 
 tsconfigs.setup {
   -- A list of parser names, or "all"
@@ -56,7 +24,7 @@ tsconfigs.setup {
     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
     -- the name of the parser)
     -- list of language that will be diagnostic_disabled
-    disable = { '' },
+    disable = {},
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
