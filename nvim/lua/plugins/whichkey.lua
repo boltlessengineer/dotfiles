@@ -17,7 +17,10 @@ which_key.setup({
     ['<leader>'] = 'SPC',
   },
   layout = {
-    align = 'left'
+    height = { min = 4, max = 25 }, -- min and max height of the columns
+    width = { min = 20, max = 50 }, -- min and max width of the columns
+    spacing = 4, -- spacing between columns
+    align = 'left', -- align columns left, center or right
   },
   ignore_missing = true,
 })
@@ -40,9 +43,12 @@ local mappings = {
     name = 'File',
     f = { '<cmd>Telescope find_files<CR>', 'Find' },
     r = { '<cmd>Telescope oldfiles<CR>', 'Recent' },
+    g = { '<cmd>Telescope live_grep<CR>', 'Live Grep' }
   },
   g = {
     name = 'Git',
+    -- TODO: add way to go-to-next-git-block
+    j = { '<cmd>lua vim.notify("some way to go-to-next-git-block")<CR>', 'Go To Next Change' },
     s = { '<cmd>Telescope git_status<CR>', 'Status' },
     d = { '<cmd>DiffviewOpen<CR>', 'Diff view' },
     l = { '<cmd>lua _Lazygit_toggle()<CR>', 'LazyGit' },
@@ -72,7 +78,7 @@ local mappings = {
     ['2'] = { '<cmd>2ToggleTerm<CR>', '2' },
     ['3'] = { '<cmd>3ToggleTerm<CR>', '3' },
     ['4'] = { '<cmd>4ToggleTerm<CR>', '4' },
-    f = { '<cmd>ToggleTerm direction=float<CR>', 'Float' },
+    f = { '<cmd>ToggleTerm direction=float<CR>', 'Float Terminal' },
   },
 }
 
