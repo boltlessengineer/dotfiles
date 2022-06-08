@@ -60,3 +60,5 @@ tsconfigs.setup {
     enable_autocmd = false,
   },
 }
+
+require 'plugins.treesitter.context'

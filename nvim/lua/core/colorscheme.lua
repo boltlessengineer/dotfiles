@@ -15,3 +15,12 @@ if not ok then
   vim.notify('colorscheme ' .. colorscheme .. ' not found!')
   return
 end
+
+-- Additional highlights
+-- TODO make PR about these
+local c = require('tokyonight.colors').setup()
+local util = require('tokyonight.util')
+-- vim.highlight.link('TreesitterContext', 'CursorLine')
+-- vim.highlight.link('TreesitterContextLineNumber', 'PmenuSel')
+util.highlight('TreesitterContext', { bg = c.bg_highlight })
+util.highlight('TreesitterContextLineNumber', { fg = c.comment, bg = c.bg_highlight })
