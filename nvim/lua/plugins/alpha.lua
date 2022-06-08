@@ -14,8 +14,9 @@ dashboard.section.buttons.val = {
   dashboard.button('e', '  > New file', ':enew <BAR> startinsert <CR>'),
   dashboard.button('f', '  > Find file', ':Telescope find_files <CR>'),
   dashboard.button('r', '  > Recent files', ':Telescope oldfiles <CR>'),
+  -- dashboard.button('p', '  > Recent Projects', ':Telescope projects <CR>'),
   dashboard.button('c', '  > Config', ':cd ~/.config/nvim <BAR> e ./init.lua <CR>'),
-  dashboard.button('p', '  > Update plugins', ':PackerSync <CR>'),
+  dashboard.button('u', '  > Update plugins', ':PackerSync <CR>'),
   dashboard.button('q', '  > Quit', ':qa <CR>'),
 }
 
