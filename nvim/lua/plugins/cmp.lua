@@ -11,6 +11,9 @@ luasnip.filetype_extend('dart', { 'flutter' })
 
 require('luasnip/loaders/from_vscode').lazy_load()
 
+-- TODO: typescript-react component snippet
+--       https://www.reddit.com/r/neovim/comments/uuhk1t/feedback_on_luasniptreesitter_snippet_that_fills/?utm_source=share&utm_medium=web2x&context=3
+
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
