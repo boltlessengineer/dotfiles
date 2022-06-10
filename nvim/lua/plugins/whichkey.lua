@@ -4,11 +4,11 @@ if not status_ok then return end
 which_key.setup({
   plugins = {
     presets = {
-      operators = true,
+      operators = false,
       motions = false,
       text_objects = false,
-      windows = true,
-      nav = true,
+      windows = false,
+      nav = false,
       z = true,
       g = false,
     },
