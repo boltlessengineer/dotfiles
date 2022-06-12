@@ -29,15 +29,12 @@ comment.setup {
   end,
 }
 
-local function map(mode, lhs, rhs)
-  vim.api.nvim_set_keymap(mode, lhs, rhs, { noremap = true, silent = true })
-end
-
--- Mappings
+-- KEYMAPS
 -- Linewise commnet toggle using Ctrl-/ (e.g. // some comment)
-map('n', '<C-_>', ':lua require("Comment.api").toggle_current_linewise()<CR>')
-map('v', '<C-_>', ':lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+-- TODO: check if `<C-/>` also works in neovim v0.7 (or `<C-_>`)
+vim.keymap.set('n', [[<C-/>]], require('Comment.api').toggle_current_linewise)
+vim.keymap.set('v', [[<C-/>]], '<Plug>(comment_toggle_linewise_visual)')
 
 -- Blockwise comment toggle using Ctrl-\ (e.g. /* some comment */)
-map('n', '<C-\\>', ':lua require("Comment.api").toggle_current_blockwise()<CR>')
-map('v', '<C-\\>', ':lua require("Comment.api").toggle_blockwise_op(vim.fn.visualmode())<CR>')
+vim.keymap.set('n', [[<C-\>]], require('Comment.api').toggle_current_blockwise)
+vim.keymap.set('v', [[<C-\>]], '<Plug>(comment_toggle_blockwise_visual)')

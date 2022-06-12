@@ -28,4 +28,8 @@ notify.setup {
   timeout = 2000,
 }
 
+-- KEYMAPS
+vim.keymap.set('n', '-', '<cmd>lua require("notify").dismiss()<CR><cmd>noh<CR>')
+vim.keymap.set('n', '+', '<cmd>Notifications<CR>')
+
 vim.notify = notify

@@ -35,12 +35,9 @@ set('n', '<Left>', '<cmd>BufferLineCyclePrev<CR>')
 -- Navigate tabs
 set('n', '<Tab>', '<cmd>tabnext<CR>')
 set('n', '<S-Tab>', '<cmd>tabprev<CR>')
-set('n', '<leader>t', ':tabnew ', { noremap = true })
+set('n', '<leader>t', ':tabnew ')
 
 set('n', '`', '<cmd>NvimTreeToggle<CR>')
-
-set('n', '-', require('notify').dismiss)
-set('n', '+', '<cmd>Notifications<CR>')
 
 -- Keeping search results centered
 set('n', 'n', 'nzzzv')
