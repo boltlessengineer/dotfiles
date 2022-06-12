@@ -37,6 +37,8 @@ local opts = {
 }
 
 local mappings = {
+  ['0'] = { 'Select Next Parameter' },
+  ['9'] = { 'Select Prev Parameter' },
   a = { '<cmd>Alpha<CR>', 'Alpha' },
   b = { '<cmd>Telescope buffers<CR>', 'Buffers' },
   f = {
@@ -62,17 +64,15 @@ local mappings = {
     I = { '<cmd>LspInstallInfo<CR>', 'Installer Info' },
     i = { '<cmd>LspInfo<CR>', 'Info' },
     j = {
-      '<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>',
+      '<cmd>lua vim.diagnostic.goto_next()<CR>',
       'Next Diagnostic',
     },
     k = {
-      '<cmd>lua vim.diagnostic.goto_prev({buffer=0})<CR>',
+      '<cmd>lua vim.diagnostic.goto_prev()<CR>',
       'Prev Diagnostic',
     },
     r = { '<cmd>lua vim.lsp.buf.rename()<CR>', 'Rename' },
   },
-  ['0'] = { 'Select Next Parameter' },
-  ['9'] = { 'Select Prev Parameter' },
   q = { '<cmd>bdelete<CR>', 'Quit Buffer' },
   ['<leader>'] = {
     name = 'Terminal',
