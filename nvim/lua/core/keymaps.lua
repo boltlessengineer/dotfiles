@@ -8,12 +8,13 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Modes
---   n : normal_mode
---   i : insert_mode
---   v : visual_mode
---   x : visual_block_mode
---   t : term_mode
---   c : command_mode
+--  n : normal mode
+--  i : insert mode
+--  v : visual mode & select mode
+--  x : visual mode only
+--  s : select mode only
+--  t : terminal mode
+--  c : command mode
 
 -- Normal --
 -- Better window navigation
