@@ -36,7 +36,6 @@ set('n', '<Left>', '<cmd>BufferLineCyclePrev<CR>')
 -- Navigate tabs
 set('n', '<Tab>', '<cmd>tabnext<CR>')
 set('n', '<S-Tab>', '<cmd>tabprev<CR>')
-set('n', '<leader>t', ':tabnew ')
 
 set('n', '`', '<cmd>NvimTreeToggle<CR>')
 
@@ -45,8 +44,9 @@ set('n', 'n', 'nzzzv')
 set('n', 'N', 'Nzzzv')
 
 -- Insert --
--- Press jk fast to exit Insert mode
-set({ 'i', 'v', 'x' }, 'jk', '<ESC>')
+-- Press jk fast to exit Insert | Visual mode
+set({ 'i', 'v' }, 'jk', '<ESC>')
+set({ 'i', 'v' }, 'kj', '<ESC>')
 
 -- TODO using clipboard in graphical applications
 -- https://github.com/neovide/neovide/issues/1282#issuecomment-1108646687

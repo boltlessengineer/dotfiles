@@ -17,6 +17,7 @@ notify.setup {
   },
   level = 2,
   minimum_width = 50,
+  max_width = 70,
   render = function(bufnr, notif, highlights, config)
     if notif.title[1] == '' then
       return renderers.minimal(bufnr, notif, highlights, config)
@@ -29,7 +30,13 @@ notify.setup {
 }
 
 -- KEYMAPS
-vim.keymap.set('n', '-', '<cmd>lua require("notify").dismiss()<CR><cmd>noh<CR>')
+-- clear all
+vim.keymap.set('n', '-', function()
+  require('notify').dismiss() -- dismiss notifications
+  vim.cmd([[noh]]) -- remove search highlights
+  vim.cmd([[echon]]) -- clear cmdline
+end)
+-- show past notifications
 vim.keymap.set('n', '+', '<cmd>Notifications<CR>')
 
 vim.notify = notify
