@@ -4,7 +4,7 @@ if not status_ok then return end
 which_key.setup({
   plugins = {
     presets = {
-      operators = false,
+      operators = true,
       motions = false,
       text_objects = false,
       windows = false,
@@ -71,6 +71,8 @@ local mappings = {
     },
     r = { '<cmd>lua vim.lsp.buf.rename()<CR>', 'Rename' },
   },
+  ['0'] = { 'Select Next Parameter' },
+  ['9'] = { 'Select Prev Parameter' },
   q = { '<cmd>bdelete<CR>', 'Quit Buffer' },
   ['<leader>'] = {
     name = 'Terminal',

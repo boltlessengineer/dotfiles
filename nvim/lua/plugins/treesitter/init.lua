@@ -50,8 +50,30 @@ tsconfigs.setup {
       keymaps = {
         ['af'] = '@function.outer',
         ['if'] = '@function.inner',
+        ['i0'] = '@parameter.inner',
         ['ac'] = '@class.outer',
         ['ic'] = '@class.outer',
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        [']f'] = '@function.inner',
+        [']p'] = '@parameter.inner',
+        ['<leader>p'] = '@parameter.inner',
+        [']c'] = '@class.inner',
+      },
+      goto_next_end = {
+        [']e'] = '@parameter.inner',
+      },
+      goto_previous_start = {
+        ['[f'] = '@function.inner',
+        ['[p'] = '@parameter.inner',
+        ['[c'] = '@class.inner',
+      },
+      goto_previous_end = {
+        ['[e'] = '@parameter.inner',
       },
     },
   },
@@ -60,5 +82,10 @@ tsconfigs.setup {
     enable_autocmd = false,
   },
 }
+-- KEYMAPS
+vim.keymap.set('n', ')', ']p', { remap = true })
+vim.keymap.set('n', '(', '[p', { remap = true })
+vim.keymap.set({ 'n', 'v' }, '<leader>0', '<ESC>]pvi0', { remap = true })
+vim.keymap.set({ 'n', 'v' }, '<leader>9', '<ESC>[evi0', { remap = true })
 
 require 'plugins.treesitter.context'
