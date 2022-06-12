@@ -6,7 +6,7 @@ end
 bufferline.setup {
   options = {
     numbers = 'none',
-    close_command = 'Bdelete! %d',
+    close_command = 'bdelete! %d',
     max_name_length = 18,
     max_prefix_length = 15,
     tab_size = 18,
