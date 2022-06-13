@@ -25,20 +25,23 @@ which_key.setup({
   ignore_missing = true,
 })
 
-local opts = {
-  mode = 'n', -- NORMAL mode
-  -- prefix: use "<leader>f" for example for mapping everything related to finding files
-  -- the prefix is prepended to every mapping part of `mappings`
-  prefix = '<leader>',
-  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true, -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = false, -- use `nowait` when creating keymaps
+local default_opts = {
+  mode    = 'n',
+  prefix  = '<leader>',
+  buffer  = nil,
+  silent  = true,
+  noremap = true,
+  nowait  = true,
 }
+
+local function newopts(...)
+  return vim.tbl_deep_extend('force', default_opts, ...)
+end
 
 local mappings = {
   ['0'] = { 'Select Next Parameter' },
   ['9'] = { 'Select Prev Parameter' },
+
   a = { '<cmd>Alpha<CR>', 'Alpha' },
   b = { '<cmd>Telescope buffers<CR>', 'Buffers' },
   f = {
@@ -59,9 +62,10 @@ local mappings = {
   l = {
     name = 'Lsp',
     a = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'Code Action' },
-    D = { '<cmd>lua vim.lsp.buf.declaration()<CR>', 'Declaration' },
     d = { '<cmd>lua vim.lsp.buf.definition()<CR>', 'Definition' },
-    f = { "<cmd>lua require('core.lsp.handlers').toggle_format_on_save()<CR>", 'Toggle AutoFormat' },
+    D = { '<cmd>lua vim.lsp.buf.declaration()<CR>', 'Declaration' },
+    f = { '<cmd>lua vim.lsp.buf.format()<CR>', 'Format this file' },
+    F = { "<cmd>lua require('core.lsp.handlers').toggle_format_on_save()<CR>", 'Toggle AutoFormat' },
     I = { '<cmd>LspInstallInfo<CR>', 'Installer Info' },
     i = { '<cmd>LspInfo<CR>', 'Info' },
     j = {
@@ -73,6 +77,8 @@ local mappings = {
       'Prev Diagnostic',
     },
     r = { '<cmd>lua vim.lsp.buf.rename()<CR>', 'Rename' },
+    -- TODO: add trouble.nvim toggle here
+    t = { 'Trouble.nvim' }
   },
   q = { '<cmd>bdelete<CR>', 'Quit Buffer' },
   ['<leader>'] = {
@@ -85,4 +91,15 @@ local mappings = {
   },
 }
 
-which_key.register(mappings, opts)
+local term_opts_n = newopts({ prefix = [[<C-;>]] })
+
+-- TODO: avoid `"+` typing in terminal-mode
+local term_mappings = {
+  ['1'] = { [[<cmd>1ToggleTerm<CR>]], '1' },
+  ['2'] = { [[<cmd>2ToggleTerm<CR>]], '2' },
+  ['3'] = { [[<cmd>3ToggleTerm<CR>]], '3' },
+  ['4'] = { [[<cmd>4ToggleTerm<CR>]], '4' },
+}
+
+which_key.register(mappings, default_opts)
+which_key.register(term_mappings, term_opts_n)
