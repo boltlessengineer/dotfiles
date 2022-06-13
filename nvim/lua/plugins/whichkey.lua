@@ -43,9 +43,10 @@ local mappings = {
   b = { '<cmd>Telescope buffers<CR>', 'Buffers' },
   f = {
     name = 'File',
-    f = { '<cmd>Telescope find_files<CR>', 'Find' },
+    f = { '<cmd>Telescope find_files<CR>', 'Find in CWD' },
+    g = { '<cmd>Telescope live_grep<CR>', 'Live Grep' },
     r = { '<cmd>Telescope oldfiles<CR>', 'Recent' },
-    g = { '<cmd>Telescope live_grep<CR>', 'Live Grep' }
+    t = { '<cmd>NvimTreeToggle<CR>', 'Toggle NvimTree' }
   },
   g = {
     name = 'Git',

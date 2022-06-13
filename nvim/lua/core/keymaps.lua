@@ -41,8 +41,6 @@ set('n', '<Left>', '<cmd>BufferLineCyclePrev<CR>')
 set('n', '<Tab>', '<cmd>tabnext<CR>')
 set('n', '<S-Tab>', '<cmd>tabprev<CR>')
 
-set('n', '`', '<cmd>NvimTreeToggle<CR>')
-
 -- Keeping search results centered
 set('n', 'n', 'nzzzv')
 set('n', 'N', 'Nzzzv')
