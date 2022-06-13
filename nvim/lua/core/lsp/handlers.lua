@@ -53,6 +53,7 @@ local function lsp_highlight_document(client)
 end
 
 local function lsp_keymaps(bufnr)
+  -- TODO: change this to vim.keymap.set()
   local opts = { noremap = true, silent = true }
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
@@ -63,6 +64,7 @@ local function lsp_keymaps(bufnr)
   buf_set_keymap('n', 'gh', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   -- buf_set_keymap('n', '<C-j>', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+  -- TODO: <C-k> to <C-/>
   buf_set_keymap('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 end
 
