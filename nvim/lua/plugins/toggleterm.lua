@@ -7,25 +7,25 @@ local Terminal = require('toggleterm.terminal').Terminal
 
 function _Lazygit_toggle()
   local lazygit = Terminal:new({
-    cmd       = 'lazygit',
-    hidden    = true,
-    dir       = 'git_dir',
-    direction = 'tab',
-    on_open   = function()
+    cmd             = 'lazygit',
+    hidden          = true, -- whether or not to include this terminal in the terminals list
+    dir             = 'git_dir',
+    direction       = 'tab',
+    on_open         = function()
       -- Don't use general on_open function defined below
-    end
+    end,
   })
   lazygit:toggle()
 end
 
 local files = {
-  c   = {'gcc -o temp ', ' && ./temp && rm ./temp'},
-  cpp = {'g++ -o temp ', ' && ./temp && rm ./temp'},
+  c   = { 'gcc -o temp ', ' && ./temp && rm ./temp' },
+  cpp = { 'g++ -o temp ', ' && ./temp && rm ./temp' },
 }
 local function Runfile()
   -- vim.cmd [[w]]
   local cmds = files[vim.bo.filetype]
-  local command = cmds[1] .. vim.fn.expand("%:t") .. cmds[2]
+  local command = cmds[1] .. vim.fn.expand('%:t') .. cmds[2]
   if command ~= nil then
     Terminal
         :new({ cmd = command, close_on_exit = false })
@@ -35,8 +35,8 @@ local function Runfile()
 end
 
 -- KEYMAPS
-vim.keymap.set("n", "<leader><leader>r", Runfile)
-vim.keymap.set("n", "<F11>", Runfile)
+vim.keymap.set('n', '<leader><leader>r', Runfile)
+vim.keymap.set('n', '<F11>', Runfile)
 
 toggleterm.setup {
   size = function(term)
@@ -53,9 +53,9 @@ toggleterm.setup {
     -- Fast enter NORMAL mode
     vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]], opts)
     vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
-    vim.keymap.set('t', [[<C-;>]], [[<C-\><C-n><C-;>]], { buffer = term.bufnr, remap = true })
   end,
-  start_in_insert = true,
+  start_in_insert = false,
+  insert_mappings = false,
   float_opts = {
     border = 'curved',
   },
