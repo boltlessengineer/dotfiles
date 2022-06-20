@@ -54,11 +54,13 @@ local mappings = {
   g = {
     name = 'Git',
     -- TODO: add way to go-to-next-git-block
-    j = { '<cmd>lua vim.notify("some way to go-to-next-git-block")<CR>', 'Go To Next Change' },
+    j = { '<cmd>Gitsigns next_hunk<CR>', 'Go To Next Hunk' },
+    k = { '<cmd>Gitsigns prev_hunk<CR>', 'Go To Prev Hunk' },
     s = { '<cmd>Telescope git_status<CR>', 'Status' },
     d = { '<cmd>DiffviewOpen<CR>', 'Diff view' },
     l = { '<cmd>lua _Lazygit_toggle()<CR>', 'LazyGit' },
   },
+  h = { '<cmd>Telescope help_tags<CR>', ':help' },
   l = {
     name = 'Lsp',
     a = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'Code Action' },
@@ -95,10 +97,12 @@ local term_opts_n = newopts({ prefix = [[<C-;>]] })
 
 -- TODO: avoid `"+` typing in terminal-mode
 local term_mappings = {
-  ['1'] = { [[<cmd>1ToggleTerm<CR>]], '1' },
-  ['2'] = { [[<cmd>2ToggleTerm<CR>]], '2' },
-  ['3'] = { [[<cmd>3ToggleTerm<CR>]], '3' },
-  ['4'] = { [[<cmd>4ToggleTerm<CR>]], '4' },
+  ['1'] = { '<cmd>1ToggleTerm<CR>', 'Terminal id : 1' },
+  ['2'] = { '<cmd>2ToggleTerm<CR>', 'Terminal id : 2' },
+  ['3'] = { '<cmd>3ToggleTerm<CR>', 'Terminal id : 3' },
+  ['4'] = { '<cmd>4ToggleTerm<CR>', 'Terminal id : 4' },
+  a     = { '<cmd>ToggleTermToggleAll<CR>', 'Toggle All Terminals' },
+  f     = { '<cmd>5ToggleTerm direction=float<CR>', 'Float Terminal' },
 }
 
 which_key.register(mappings, default_opts)
