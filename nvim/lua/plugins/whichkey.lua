@@ -80,14 +80,6 @@ local mappings = {
     },
     r = { '<cmd>lua vim.lsp.buf.rename()<CR>', 'Rename' },
     -- TODO: add trouble.nvim toggle here
-    t = {
-      name= 'Trouble',
-      w = { '<cmd>TroubleToggle workspace_diagnostics<CR>', 'Workspace Diagnostics' },
-      r = { '<cmd>TroubleToggle lsp_references<CR>', 'LSP References' },
-      -- d = { '<cmd>TroubleToggle lsp_definitions<CR>', 'LSP Definitions' },
-      q = { '<cmd>TroubleToggle quickfix<CR>', 'Quickfix Items' },
-      l = { '<cmd>TroubleToggle loclist<CR>', 'Location List' },
-    },
     w = { '<cmd>TroubleToggle workspace_diagnostics<CR>', 'Workspace Diagnostics' },
   },
   q = { '<cmd>bdelete<CR>', 'Quit Buffer' },
@@ -98,6 +90,14 @@ local mappings = {
     ['3'] = { '<cmd>3ToggleTerm<CR>', '3' },
     ['4'] = { '<cmd>4ToggleTerm<CR>', '4' },
     f = { '<cmd>ToggleTerm direction=float<CR>', 'Float Terminal' },
+  },
+  t = {
+    name = 'Trouble',
+    w = { '<cmd>TroubleToggle workspace_diagnostics<CR>', 'Workspace Diagnostics' },
+    r = { '<cmd>TroubleToggle lsp_references<CR>', 'LSP References' },
+    -- d = { '<cmd>TroubleToggle lsp_definitions<CR>', 'LSP Definitions' },
+    q = { '<cmd>TroubleToggle quickfix<CR>', 'Quickfix Items' },
+    l = { '<cmd>TroubleToggle loclist<CR>', 'Location List' },
   },
 }
 
