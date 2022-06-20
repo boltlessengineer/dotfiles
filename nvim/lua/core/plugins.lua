@@ -57,6 +57,7 @@ return packer.startup(function(use)
   use 'goolord/alpha-nvim'
   use 'ahmedkhalf/project.nvim'
   use 'folke/which-key.nvim'
+  use 'folke/trouble.nvim'
   use 'rcarriga/nvim-notify'
   use 'lukas-reineke/indent-blankline.nvim'
 
