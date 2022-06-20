@@ -100,6 +100,7 @@ return packer.startup(function(use)
   use 'jose-elias-alvarez/nvim-lsp-ts-utils' -- typescript dev utils
   -- Language specific plugins (doesn't depend on nvim-lspconfg)
   use 'akinsho/flutter-tools.nvim' -- flutter
+  use 'smjonas/inc-rename.nvim' -- rename with immediate visual feedback
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
