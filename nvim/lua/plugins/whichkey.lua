@@ -78,8 +78,7 @@ local mappings = {
       '<cmd>lua vim.diagnostic.goto_prev()<CR>',
       'Prev Diagnostic',
     },
-    r = { '<cmd>lua vim.lsp.buf.rename()<CR>', 'Rename' },
-    -- TODO: add trouble.nvim toggle here
+    r = { vim.lsp.buf.rename, 'Rename' },
     w = { '<cmd>TroubleToggle workspace_diagnostics<CR>', 'Workspace Diagnostics' },
   },
   q = { '<cmd>bdelete<CR>', 'Quit Buffer' },
