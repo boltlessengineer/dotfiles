@@ -8,8 +8,7 @@ local b = null_ls.builtins
 
 local eslintConfig = {
   condition = function(utils)
-    return true
-    -- return utils.root_has_file({ '.eslintrc.json' })
+    return utils.root_has_file({ '.eslintrc.json' })
   end,
 }
 
@@ -23,8 +22,8 @@ null_ls.setup({
 
     -- eslint_d (js)
     -- > npm install -g eslint_d
-    b.diagnostics.eslint.with(eslintConfig),
-    b.code_actions.eslint.with(eslintConfig),
+    b.diagnostics.eslint_d.with(eslintConfig),
+    b.code_actions.eslint_d.with(eslintConfig),
 
     -- prettierd
     -- > npm install -g @fsouza/prettierd

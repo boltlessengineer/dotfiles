@@ -82,9 +82,9 @@ M.on_attach = function(client, bufnr)
       callback = function()
         vim.lsp.buf.format({
           bufnr = bufnr,
-          -- filter = function(c)
-          --   return c.name ~= 'tsserver'
-          -- end,
+          filter = function(c)
+            return c.name ~= 'tsserver'
+          end,
           -- TODO: need callback to print `Auto-formatted with ~ server`
           --       (null-ls formatting should be notified exactly)
         })
