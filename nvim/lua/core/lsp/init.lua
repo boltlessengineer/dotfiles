@@ -1,9 +1,7 @@
 local ok, _ = pcall(require, 'lspconfig')
-if not ok then
-  return
-end
+if not ok then return end
 
-require 'core.lsp.lsp-installer'
+require('core.lsp.configs')
 require('core.lsp.handlers').setup()
 require('core.lsp.null-ls')
 

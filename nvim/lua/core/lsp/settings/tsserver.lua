@@ -7,9 +7,7 @@ return {
     'typescript', 'typescriptreact', 'typescript.tsx'
   },
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
-
+    -- TODO: enable ts_utils
     -- ts_utils.setup({})
     -- ts_utils.setup_client(client)
 

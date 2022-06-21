@@ -68,54 +68,37 @@ local function lsp_keymaps(bufnr)
   buf_set_keymap('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 end
 
-M.on_attach = function(client, bufnr)
-  -- if client.resolved_capabilities.document_formatting then
-  --   vim.api.nvim_exec(
-  --     [[
-  --     augroup Format
-  --       autocmd! * <buffer>
-  --       autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
-  --     augroup END
-  --     ]],
-  --     false
-  --   )
-  -- end
+local augroup = vim.api.nvim_create_augroup('LspAutoFormat', {})
 
+M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
+  -- Setup AutoFormat
+  if client.supports_method('textDocument/formatting') then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({
+          bufnr = bufnr,
+          -- filter = function(c)
+          --   return c.name ~= 'tsserver'
+          -- end,
+          -- TODO: need callback to print `Auto-formatted with ~ server`
+          --       (null-ls formatting should be notified exactly)
+        })
+      end
+    })
+  end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
 if not ok then return end
+-- TODO: `return M end` to use neovim's default omnifunc
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
-
-function M.enable_format_on_save()
-  vim.cmd [[
-    augroup format_on_save
-      autocmd!
-      autocmd BufWritePre * lua vim.lsp.buf.formatting_seq_sync()
-    augroup end
-  ]]
-  vim.notify('Enabled format on save')
-end
-
-function M.disable_format_on_save()
-  local name = 'format_on_save'
-  if vim.fn.exists('#' .. name) == 1 then
-    vim.api.nvim_del_augroup_by_name(name)
-  end
-  vim.notify('Disabled format on save')
-end
-
-function M.toggle_format_on_save()
-  if vim.fn.exists '#format_on_save#BufWritePre' == 0 then
-    M.enable_format_on_save()
-  else
-    M.disable_format_on_save()
-  end
-end
 
 return M
