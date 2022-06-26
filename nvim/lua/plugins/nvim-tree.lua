@@ -24,6 +24,7 @@ nvim_tree.setup {
   open_on_tab = false,
   update_cwd = true,
   view = {
+    -- TODO: function to calculate suitable width
     width = 30,
     height = 30,
     hide_root_folder = false,
