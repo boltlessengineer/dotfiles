@@ -2,7 +2,7 @@
 
 vim.g.tokyonight_style = 'night'
 -- Add transparent in graphical applications
-if vim.cmd('echo $TERM') ~= '' then
+if vim.fn.expand('$TERM') ~= '' then
   vim.g.tokyonight_transparent = true
   vim.g.tokyonight_transparent_sidebar = true
 end
