@@ -1,10 +1,12 @@
 -- Install loved servers
 local servers = {
+  'clangd',
   'gopls',
   'jsonls',
   'sumneko_lua',
   'tailwindcss',
   'tsserver',
+  'html',
 }
 
 local installer_ok, lsp_installer = pcall(require, 'nvim-lsp-installer')
