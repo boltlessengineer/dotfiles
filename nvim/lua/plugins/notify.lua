@@ -6,7 +6,7 @@ end
 local renderers = require('notify.render')
 
 notify.setup {
-  background_colour = 'Normal',
+  background_colour = 'NormalFloat',
   fps = 30,
   icons = {
     DEBUG = '',
