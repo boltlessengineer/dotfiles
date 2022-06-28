@@ -15,6 +15,7 @@ return {
   'json',
   'lua',
   'markdown',
+  'markdown_inline',
   'php',
   'python',
   'pug',

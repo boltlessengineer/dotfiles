@@ -19,6 +19,8 @@ end
 local lspconfig = require('lspconfig')
 
 for _, server in pairs(servers) do
+  -- TODO: get server list from lsp_installer get server list,
+  --       not local servers{} in config file
   local opts = {
     on_attach = require('core.lsp.handlers').on_attach,
     capabilities = require('core.lsp.handlers').capabilities,
