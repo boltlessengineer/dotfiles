@@ -6,7 +6,7 @@ neovim version : v0.7.0
 
 ## TODO
 
-- [ ] Find why print `xterm-256color` on startup
+- [x] Find why print `xterm-256color` on startup
 - [ ] fix notify.nvim word wrap issue
 - [ ] better ts-parser & LSP for MarkDown
 - [ ] Find way to run multiple lua commands
