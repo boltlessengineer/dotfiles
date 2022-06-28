@@ -73,6 +73,14 @@ local augroup = vim.api.nvim_create_augroup('LspAutoFormat', {})
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
+  local ok, navic = pcall(require, 'nvim-navic')
+  if ok and client.supports_method('textDocument/documentSymbol') then
+    if client.name ~= 'html' then
+      -- TODO: html-ls doesn't suppot documentSymbol
+      -- https://github.com/microsoft/vscode-html-languageservice/issues/130
+      navic.attach(client, bufnr)
+    end
+  end
   -- Setup AutoFormat
   if client.supports_method('textDocument/formatting') then
     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })

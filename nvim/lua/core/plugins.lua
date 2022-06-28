@@ -60,6 +60,8 @@ return packer.startup(function(use)
   use 'folke/trouble.nvim'
   use 'rcarriga/nvim-notify'
   use 'lukas-reineke/indent-blankline.nvim'
+  use 'SmiteshP/nvim-navic'
+  use 'ChristianChiarulli/nvim-gps'
 
   -- Note
   use 'nvim-neorg/neorg'

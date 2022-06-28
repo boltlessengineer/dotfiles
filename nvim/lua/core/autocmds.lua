@@ -1,17 +1,15 @@
-vim.api.nvim_create_autocmd('BufEnter', {
+vim.api.nvim_create_autocmd({ 'TermOpen', 'BufEnter' }, {
   pattern = 'term://*',
-  callback = function()
-    print('BufEnter')
-    vim.api.nvim_win_set_option(0, 'number', false)
-    vim.api.nvim_win_set_option(0, 'relativenumber', false)
-    vim.api.nvim_win_set_option(0, 'cursorline', false)
+  callback = function(opts)
+    vim.api.nvim_buf_set_option(opts.buf, 'bufhidden', 'wipe')
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.opt_local.cursorline = false
+    vim.cmd [[startinsert]]
   end
 })
 
-vim.api.nvim_create_autocmd('TermOpen', {
-  pattern = '*lazygit*',
-  callback = function()
-    print('New Terminal')
-    vim.cmd [[startinsert!]]
-  end
-})
+vim.api.nvim_create_user_command('Vterm', function()
+  vim.cmd [[split]]
+  vim.cmd [[term]]
+end, {})

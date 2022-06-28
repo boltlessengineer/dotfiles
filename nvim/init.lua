@@ -25,3 +25,5 @@ require 'plugins.neogit'
 require 'plugins.diffview'
 -- require 'plugins.project'
 require 'plugins.inc-rename'
+
+require 'ui.winbar'

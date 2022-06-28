@@ -26,3 +26,36 @@ util.highlight('TreesitterContext', { bg = c.bg_highlight })
 util.highlight('TreesitterContextLineNumber', { fg = c.comment, bg = c.bg_highlight })
 util.highlight('IndentBlanklineChar', { fg = c.fg_gutter })
 util.highlight('IndentBlanklineContextChar', { fg = c.dark5 })
+util.highlight('NavicText', { fg = c.dark5 })
+util.highlight('NavicSeparator', { fg = c.fg_gutter })
+local items = {
+  'File',
+  'Module',
+  'Namespace',
+  'Package',
+  'Class',
+  'Method',
+  'Property',
+  'Field',
+  'Constructor',
+  'Enum',
+  'Interface',
+  'Function',
+  'Variable',
+  'Constant',
+  'String',
+  'Number',
+  'Boolean',
+  'Array',
+  'Object',
+  'Key',
+  'Null',
+  'EnumMember',
+  'Struct',
+  'Event',
+  'Operator',
+  'TypeParameter',
+}
+for _, item in pairs(items) do
+  vim.cmd('hi link NavicIcons' .. item .. ' CmpItemKind' .. item)
+end
