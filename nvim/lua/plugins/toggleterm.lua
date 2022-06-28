@@ -7,11 +7,11 @@ local Terminal = require('toggleterm.terminal').Terminal
 
 function _Lazygit_toggle()
   local lazygit = Terminal:new({
-    cmd             = 'lazygit',
-    hidden          = true, -- whether or not to include this terminal in the terminals list
-    dir             = 'git_dir',
-    direction       = 'tab',
-    on_open         = function()
+    cmd       = 'lazygit',
+    hidden    = true, -- whether or not to include this terminal in the terminals list
+    dir       = 'git_dir',
+    direction = 'tab',
+    on_open   = function()
       -- Don't use general on_open function defined below
     end,
   })
