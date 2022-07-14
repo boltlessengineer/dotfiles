@@ -38,7 +38,6 @@ null_ls.setup({
     local augroup = vim.api.nvim_create_augroup('LspFormatting', { clear = false })
     -- TODO: organize augroups as lua module ('core.augroups')
     if client.supports_method('textDocument/formatting') then
-      vim.notify('AF: ' .. client.name)
       vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
       vim.api.nvim_create_autocmd('BufWritePre', {
         group = augroup,
