@@ -42,8 +42,7 @@ M.setup = function()
 end
 
 local function lsp_highlight_document(client)
-  -- TODO: check if `resolved_capabilities` also works in v0.8 (nightly)
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.documentHighlightProvider then
     local status_ok, illuminate = pcall(require, 'illuminate')
     if not status_ok then
       return
