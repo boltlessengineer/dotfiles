@@ -4,6 +4,31 @@
 neovim version : v0.7.0
 ```
 
+## Install / Uninstall
+
+### Build & Install
+
+```bash
+xcode-select --Install
+# install homebrew
+brew install ninja libtool automake cmake pkg-config gettext curl
+
+git clone https://github.com/neovim/neovim
+cd neovim
+# remove build files (when re-build)
+rm -rf build .deps
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+# (now installed at `/usr/local`)
+```
+
+### Uninstall
+
+```bash
+sudo rm /usr/local/bin/nvim
+sudo rm -r /usr/local/share/nvim
+```
+
 ## TODO
 
 - [x] Find why print `xterm-256color` on startup
