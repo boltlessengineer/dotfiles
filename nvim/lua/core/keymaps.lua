@@ -45,6 +45,21 @@ set('n', '<S-Tab>', '<cmd>tabprev<CR>')
 set('n', 'n', 'nzzzv')
 set('n', 'N', 'Nzzzv')
 
+-- Smart dd (don't override register when deleting empty line)
+-- inspired by u/JoseConseco_'s 'smart dd' post
+local function smart_dd()
+  local current_line = '' .. vim.api.nvim_get_current_line()
+  if current_line == '' then
+    print('dont yank')
+    return '"_dd'
+  else
+    print('yank')
+    return 'dd'
+  end
+end
+
+set('n', 'dd', smart_dd, { expr = true })
+
 -- Insert --
 -- Press jk fast to exit Insert | Visual mode
 set({ 'i', 'v' }, 'jk', '<ESC>')
