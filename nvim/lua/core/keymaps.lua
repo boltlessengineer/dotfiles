@@ -49,7 +49,7 @@ set('n', 'N', 'Nzzzv')
 -- inspired by u/JoseConseco_'s 'smart dd' post
 local function smart_dd()
   local current_line = '' .. vim.api.nvim_get_current_line()
-  if current_line == '' then
+  if current_line:match('^%s*$') then
     print('dont yank')
     return '"_dd'
   else
