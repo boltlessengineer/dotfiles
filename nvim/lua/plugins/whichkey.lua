@@ -97,6 +97,7 @@ local mappings = {
     -- d = { '<cmd>TroubleToggle lsp_definitions<CR>', 'LSP Definitions' },
     q = { '<cmd>TroubleToggle quickfix<CR>', 'Quickfix Items' },
     l = { '<cmd>TroubleToggle loclist<CR>', 'Location List' },
+    t = { '<cmd>TodoTrouble<CR>', 'Todo List' },
   },
 }
 
