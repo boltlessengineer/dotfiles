@@ -44,21 +44,22 @@ M.gps = function()
   end
 end
 
+M.filetype_exclude = {
+  'alpha',
+  'help',
+  'NvimTree',
+  'neogitstatus',
+  'packer',
+  'Trouble',
+  'Telescope',
+  'Whichkey',
+}
+
 M.get_winbar = function()
   if vim.bo.buftype == 'terminal' then
     return ''
   end
-  local winbar_filetype_exclude = {
-    'alpha',
-    'help',
-    'NvimTree',
-    'neogitstatus',
-    'packer',
-    'Trouble',
-    'Telescope',
-    'Whichkey',
-  }
-  if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
+  if vim.tbl_contains(M.filetype_exclude, vim.bo.filetype) then
     return ''
   end
   return table.concat({

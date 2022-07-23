@@ -35,7 +35,8 @@ local options = {
   sidescrolloff = 8,
   guifont = 'FiraCode Nerd Font:h16', -- the font used in graphical neovim applications
   whichwrap = '<,>,[,]',
-  winbar = "%{%v:lua.require'ui.winbar'.get_winbar()%}"
+  -- NOTE: waiting until 'disabling winbar locally' becames more easier. See neovim#1866
+  -- winbar = "%{%v:lua.require'ui.winbar'.get_winbar()%}"
 }
 
 for k, v in pairs(options) do
