@@ -45,6 +45,6 @@ end
 
 vim.opt.shortmess:append 'c'
 vim.opt.fillchars:append({
-  vert = ' ',
+  -- vert = ' ',
   diff = '╱', -- TODO: change to dotted slash & change colorscheme to Normal
 })

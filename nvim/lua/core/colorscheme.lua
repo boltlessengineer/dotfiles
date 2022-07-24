@@ -28,7 +28,7 @@ util.highlight('IndentBlanklineChar', { fg = c.fg_gutter })
 util.highlight('IndentBlanklineContextChar', { fg = c.dark5 })
 util.highlight('NavicText', { fg = c.dark5 })
 util.highlight('NavicSeparator', { fg = c.fg_gutter })
-util.highlight('NvimTreeWinSeparator', { bg = c.bg_sidebar })
+util.highlight('NvimTreeWinSeparator', { fg = c.bg_sidebar, bg = c.bg_sidebar })
 local items = {
   'File',
   'Module',
