@@ -82,7 +82,7 @@ local mappings = {
     r = { vim.lsp.buf.rename, 'Rename' },
     w = { '<cmd>TroubleToggle workspace_diagnostics<CR>', 'Workspace Diagnostics' },
   },
-  q = { '<cmd>bdelete<CR>', 'Quit Buffer' },
+  q = { '<cmd>close<CR>', 'Close Window' },
   ['<leader>'] = {
     name = 'Terminal',
     ['1'] = { '<cmd>1ToggleTerm<CR>', '1' },
