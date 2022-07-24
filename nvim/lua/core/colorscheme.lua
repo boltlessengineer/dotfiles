@@ -4,7 +4,7 @@ vim.g.tokyonight_style = 'night'
 -- Add transparent in graphical applications
 if vim.fn.expand('$TERM') ~= '' then
   vim.g.tokyonight_transparent = true
-  vim.g.tokyonight_transparent_sidebar = true
+  vim.g.tokyonight_transparent_sidebar = false
 end
 
 local colorscheme = 'tokyonight'
@@ -17,7 +17,7 @@ if not ok then
 end
 
 -- Additional highlights
--- TODO make PR about these
+-- TODO: make PR about these
 local c = require('tokyonight.colors').setup()
 local util = require('tokyonight.util')
 -- vim.highlight.link('TreesitterContext', 'CursorLine')
@@ -28,6 +28,7 @@ util.highlight('IndentBlanklineChar', { fg = c.fg_gutter })
 util.highlight('IndentBlanklineContextChar', { fg = c.dark5 })
 util.highlight('NavicText', { fg = c.dark5 })
 util.highlight('NavicSeparator', { fg = c.fg_gutter })
+util.highlight('NvimTreeWinSeparator', { bg = c.bg_sidebar })
 local items = {
   'File',
   'Module',

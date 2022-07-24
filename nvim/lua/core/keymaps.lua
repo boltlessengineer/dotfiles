@@ -60,6 +60,8 @@ end
 
 set('n', 'dd', smart_dd, { expr = true })
 
+set('n', '<C-e>', '<cmd>NvimTreeToggle<CR>')
+
 -- Insert --
 -- Press jk fast to exit Insert | Visual mode
 set({ 'i', 'v' }, 'jk', '<ESC>')
