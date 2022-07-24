@@ -49,6 +49,7 @@ toggleterm.setup {
   open_mapping = [[<c-t>]],
   on_open = function(term)
     local opts = { buffer = term.bufnr }
+    vim.wo.signcolumn = 'no'
     -- KEYMAPS
     -- Fast enter NORMAL mode
     vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]], opts)
@@ -60,3 +61,5 @@ toggleterm.setup {
     border = 'curved',
   },
 }
+
+-- vim.api.nvim_del_user_command('TermExec')
