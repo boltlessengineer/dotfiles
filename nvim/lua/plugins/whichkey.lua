@@ -41,6 +41,7 @@ end
 local mappings = {
   ['0'] = { 'Select Next Parameter' },
   ['9'] = { 'Select Prev Parameter' },
+  [';'] = { '<cmd>Telescope commands<CR>', 'Commands' },
 
   a = { '<cmd>Alpha<CR>', 'Alpha' },
   b = { '<cmd>Telescope buffers<CR>', 'Buffers' },
@@ -48,8 +49,8 @@ local mappings = {
     name = 'File',
     f = { '<cmd>Telescope find_files<CR>', 'Find in CWD' },
     g = { '<cmd>Telescope live_grep<CR>', 'Live Grep' },
+    l = { '<cmd>NvimTreeToggle<CR>', 'Toggle NvimTree' },
     r = { '<cmd>Telescope oldfiles<CR>', 'Recent' },
-    t = { '<cmd>NvimTreeToggle<CR>', 'Toggle NvimTree' }
   },
   g = {
     name = 'Git',

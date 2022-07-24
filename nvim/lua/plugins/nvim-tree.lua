@@ -3,12 +3,13 @@ if not ok then
   return
 end
 
-local config_ok, nvim_tree_config = pcall(require, 'nvim-tree.config')
-if not config_ok then
-  return
-end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
+-- NOTE: tree_cb & the cb property are deprecated. See `:help nvim-tree-mappings`
+-- local config_ok, nvim_tree_config = pcall(require, 'nvim-tree.config')
+-- if not config_ok then
+--   return
+-- end
+--
+-- local tree_cb = nvim_tree_config.nvim_tree_callback
 
 -- TODO: Update this with original github setup {} code
 nvim_tree.setup {
@@ -24,17 +25,37 @@ nvim_tree.setup {
   open_on_tab = false,
   update_cwd = true,
   view = {
-    -- TODO: function to calculate suitable width
+    -- TODO: function to calculate suitable width (open on current window in small width)
     width = 30,
     height = 30,
     hide_root_folder = false,
     side = 'left',
     mappings = {
-      custom_only = false,
+      custom_only = true,
       list = {
-        { key = { 'l', '<CR>', 'o' }, cb = tree_cb 'edit' },
-        { key = 'h', cb = tree_cb 'close_node' },
-        { key = 'v', cb = tree_cb 'vsplit' },
+        -- KEMAPS
+        { key = { 'l', '<CR>' }, action = 'edit' },
+        { key = 'e', action = 'edit_in_place' },
+        { key = 'h', action = 'close_node' },
+        { key = 'v', action = 'vsplit' },
+        { key = '0', action = 'first_sibling' },
+        { key = '$', action = 'last_sibling' },
+        { key = 'I', action = 'toggle_git_ignored' },
+        { key = 'H', action = 'toggle_dotfiles' },
+        { key = 'U', action = 'toggle_custom' },
+        { key = 'R', action = 'refresh' },
+        { key = 'a', action = 'create' },
+        { key = 'd', action = 'remove' },
+        { key = 'D', action = 'trash' },
+        { key = 'r', action = 'rename' },
+        { key = '<C-r>', action = 'full_rename' },
+        { key = 'x', action = 'cut' },
+        { key = 'c', action = 'copy' },
+        { key = 'p', action = 'paste' },
+        { key = 'y', action = 'copy_name' },
+        { key = 'Y', action = 'copy_path' },
+        { key = 'gy', action = 'copy_absolute_path' },
+        { key = '?', action = 'toggle_help' },
       },
     },
     number = false,
