@@ -91,6 +91,8 @@ local mappings = {
     ['4'] = { '<cmd>4ToggleTerm<CR>', '4' },
     f = { '<cmd>ToggleTerm direction=float<CR>', 'Float Terminal' },
   },
+  -- TODO: delete buffer if bufnr(0) is -1 or it is last window(except NvimTree, Trouble, ...) istead of closing window
+  q = { 'Close Window' },
   t = {
     name = 'Trouble',
     w = { '<cmd>TroubleToggle workspace_diagnostics<CR>', 'Workspace Diagnostics' },

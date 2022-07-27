@@ -60,6 +60,15 @@ end
 
 set('n', 'dd', smart_dd, { expr = true })
 
+-- Smart closing
+local function smart_close()
+  if not pcall(vim.cmd.close) then
+    vim.cmd.bd()
+  end
+end
+
+set('n', '<leader>q', smart_close)
+
 set('n', '<C-e>', '<cmd>NvimTreeToggle<CR>')
 
 -- Insert --
