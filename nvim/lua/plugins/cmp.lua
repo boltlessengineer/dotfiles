@@ -19,19 +19,19 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
 end
 
--- icons (based on lspkind-nvim)
+--   פּ ﯟ   some other good icons
 local kind_icons = {
   Text = '',
-  Method = '',
+  Method = 'm',
   Function = '',
-  Constructor = '',
-  Field = 'ﰠ',
-  Variable = '',
-  Class = 'ﴯ',
+  Constructor = '',
+  Field = '',
+  Variable = '',
+  Class = '',
   Interface = '',
   Module = '',
-  Property = 'ﰠ',
-  Unit = '塞',
+  Property = '',
+  Unit = '',
   Value = '',
   Enum = '',
   Keyword = '',
@@ -41,8 +41,8 @@ local kind_icons = {
   Reference = '',
   Folder = '',
   EnumMember = '',
-  Constant = '',
-  Struct = 'פּ',
+  Constant = '',
+  Struct = '',
   Event = '',
   Operator = '',
   TypeParameter = '',

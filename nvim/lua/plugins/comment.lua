@@ -31,11 +31,10 @@ comment.setup {
 
 -- KEYMAPS
 -- Linewise commnet toggle using Ctrl-/ (e.g. // some comment)
-local api = require('Comment.api')
-vim.keymap.set('n', [[<C-/>]], api.toggle.linewise.current)
--- TODO: ????
--- vim.keymap.set('v', [[<C-/>]], '<Plug>(comment_toggle_linewise_visual)')
+-- TODO: check if `<C-/>` also works in neovim v0.7 (or `<C-_>`)
+vim.keymap.set('n', [[<C-/>]], require('Comment.api').toggle_current_linewise)
+vim.keymap.set('v', [[<C-/>]], '<Plug>(comment_toggle_linewise_visual)')
 
 -- Blockwise comment toggle using Ctrl-\ (e.g. /* some comment */)
-vim.keymap.set('n', [[<C-\>]], api.toggle.blockwise.current)
--- vim.keymap.set('v', [[<C-\>]], '<Plug>(comment_toggle_blockwise_visual)')
+vim.keymap.set('n', [[<C-\>]], require('Comment.api').toggle_current_blockwise)
+vim.keymap.set('v', [[<C-\>]], '<Plug>(comment_toggle_blockwise_visual)')

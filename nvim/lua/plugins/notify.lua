@@ -31,12 +31,12 @@ notify.setup {
 
 -- KEYMAPS
 -- clear all
-vim.keymap.set('n', '<ESC>', function()
+vim.keymap.set('n', '-', function()
   require('notify').dismiss() -- dismiss notifications
   vim.cmd([[noh]]) -- remove search highlights
   vim.cmd([[echon]]) -- clear cmdline
 end)
 -- show past notifications
--- vim.keymap.set('n', '+', '<cmd>Notifications<CR>')
+vim.keymap.set('n', '+', '<cmd>Notifications<CR>')
 
 vim.notify = notify

@@ -2,7 +2,7 @@ local ok, context = pcall(require, 'treesitter-context')
 if not ok then return end
 
 context.setup {
-  enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+  enable = false, -- Enable this plugin (Can be enabled/disabled later via commands)
   max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
   patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
     -- For all filetypes

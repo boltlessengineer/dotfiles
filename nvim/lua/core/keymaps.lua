@@ -16,6 +16,7 @@ vim.g.maplocalleader = ' '
 --  t : terminal mode
 --  c : command mode
 
+-- Normal --
 -- Better window navigation
 set('n', '<C-h>', '<C-w>h')
 set('n', '<C-j>', '<C-w>j')
@@ -59,19 +60,10 @@ end
 
 set('n', 'dd', smart_dd, { expr = true })
 
--- Don't yank with x
-set('n', 'x', '"_x')
-
--- Increment/Decrement
-set('n', '+', '<C-a>')
-set('n', '-', '<C-x>')
-
 -- Smart closing
 local function smart_close()
-  if not pcall(vim.cmd.tabclose) then
-    if not pcall(vim.cmd.close) then
-      vim.cmd.bd()
-    end
+  if not pcall(vim.cmd.close) then
+    vim.cmd.bd()
   end
 end
 
@@ -79,9 +71,10 @@ set('n', '<leader>q', smart_close)
 
 set('n', '<C-e>', '<cmd>NvimTreeToggle<CR>')
 
--- Press jk fast to exit insert mode
-set('i', 'jk', '<ESC>')
-set('i', 'kj', '<ESC>')
+-- Insert --
+-- Press jk fast to exit Insert | Visual mode
+set({ 'i', 'v' }, 'jk', '<ESC>')
+set({ 'i', 'v' }, 'kj', '<ESC>')
 
 -- TODO using clipboard in graphical applications
 -- https://github.com/neovide/neovide/issues/1282#issuecomment-1108646687
@@ -91,7 +84,8 @@ vim.g.neovide_input_use_logo = true
 set('v', '<D-c>', '<cmd>echo "want to copy"<CR>')
 set('v', '<D-v>', '<cmd>echo "want to paste"<CR>')
 
--- Stay visual mode while indenting
+-- Visual --
+-- Stay in indent mode
 set('v', '<', '<gv')
 set('v', '>', '>gv')
 

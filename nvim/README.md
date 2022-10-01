@@ -31,35 +31,6 @@ sudo rm -r /usr/local/share/nvim
 
 ## TODO
 
-- Things to learn
-
-  - [ ] jumplist
-  - [ ] operator
-  - [ ] register
-  - [ ] harpoon
-
-- Things to add (or try)
-
-  - [ ] fidget.nvim
-  - [ ] nvim-base16
-
-- Things to make
-
-  - [ ] show buffer count on statusbar
-
-- [ ] projects
-
-  - [ ] nativeTerm.nvim
-  - [ ] proTerm.nvim
-  - [ ] inlinefold.nvim
-    - hides html class names (like tailwindcss)
-    - hides long texts (ex: urls) in markdown tables
-    - inspired by "inlinefold" plugin for VSCode
-
-- [ ] add fold whichkey(or ui.select) mappings. use `<C-f>`
-- [ ] remove numberline in vertical terminal like trouble.nvim
-- [ ] mark opened buffers in file tree || make sidebar plugin to show buffer lists
-- [ ] ignore help files in `Telescope oldfiles` (`<space>fr`)
 - [x] Find why print `xterm-256color` on startup
 - [ ] fix notify.nvim word wrap issue
 - [ ] better ts-parser & LSP for MarkDown

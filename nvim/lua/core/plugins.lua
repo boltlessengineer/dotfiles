@@ -14,7 +14,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     install_path,
   }
   print 'Installing packer close and reopen Neovim...'
-  vim.cmd.packadd('packer.nvim')
+  vim.cmd [[packadd packer.nvim]]
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
@@ -52,7 +52,7 @@ return packer.startup(function(use)
   use 'numToStr/Comment.nvim' -- Easily comment stuff
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua' -- File explorer written in lua
-  -- use 'akinsho/bufferline.nvim'
+  use 'akinsho/bufferline.nvim'
   use 'nvim-lualine/lualine.nvim'
   use 'goolord/alpha-nvim'
   use 'ahmedkhalf/project.nvim'
@@ -63,9 +63,6 @@ return packer.startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   use 'SmiteshP/nvim-navic'
   use 'ChristianChiarulli/nvim-gps'
-
-  -- TODO: need to make this work correctly
-  use 'Pocco81/true-zen.nvim'
 
   -- Note
   use 'nvim-neorg/neorg'
@@ -79,12 +76,11 @@ return packer.startup(function(use)
   -- Terminal
   use {
     'akinsho/toggleterm.nvim',
-    tag = 'v2.*',
+    tag = 'v1.*',
   }
 
   -- Colorschemes
   use 'folke/tokyonight.nvim'
-  use { 'catppuccin/nvim', as = 'catppuccin' }
 
   -- cmp plugins
   use 'hrsh7th/nvim-cmp' -- The completion plugin
@@ -108,12 +104,9 @@ return packer.startup(function(use)
   -- Language specific plugins (doesn't depend on nvim-lspconfg)
   use 'akinsho/flutter-tools.nvim' -- flutter
   use 'smjonas/inc-rename.nvim' -- rename with immediate visual feedback
-  use 'j-hui/fidget.nvim' -- lsp progress message
-  use 'simrat39/inlay-hints.nvim' -- inlay type hints
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
-  use 'zane-/cder.nvim'
 
   -- Treesitter
   use {
