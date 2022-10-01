@@ -3,14 +3,6 @@ if not ok then
   return
 end
 
--- NOTE: tree_cb & the cb property are deprecated. See `:help nvim-tree-mappings`
--- local config_ok, nvim_tree_config = pcall(require, 'nvim-tree.config')
--- if not config_ok then
---   return
--- end
---
--- local tree_cb = nvim_tree_config.nvim_tree_callback
-
 -- TODO: Update this with original github setup {} code
 nvim_tree.setup {
   disable_netrw = true,
@@ -27,9 +19,10 @@ nvim_tree.setup {
   view = {
     -- TODO: function to calculate suitable width (open on current window in small width)
     width = 30,
-    height = 30,
     hide_root_folder = false,
     side = 'left',
+    number = false,
+    relativenumber = false,
     mappings = {
       custom_only = true,
       list = {
@@ -58,10 +51,13 @@ nvim_tree.setup {
         { key = '?', action = 'toggle_help' },
       },
     },
-    number = false,
-    relativenumber = false,
   },
   renderer = {
+    indent_markers = {
+      -- enable = true,
+      icons = {
+      }
+    },
     icons = {
       glyphs = {
         default = '',
@@ -98,7 +94,7 @@ nvim_tree.setup {
     },
   },
   update_focused_file = {
-    enable = true,
+    enable = false,
     update_cwd = false,
     ignore_list = {},
   },
@@ -121,7 +117,7 @@ nvim_tree.setup {
   },
   actions = {
     open_file = {
-      quit_on_open = false,
+      quit_on_open = true,
     },
   },
 }

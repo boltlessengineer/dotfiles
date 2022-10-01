@@ -5,6 +5,10 @@ end
 
 local actions = require 'telescope.actions'
 
+telescope.load_extension('cder')
+
+-- TODO: make quicklist from searched result
+
 telescope.setup {
   defaults = {
     mappings = {
@@ -15,5 +19,9 @@ telescope.setup {
         ['<C-c>'] = actions.close,
       }
     }
+  },
+  extensions = {
+    cder = {
+    },
   },
 }

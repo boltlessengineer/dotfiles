@@ -23,7 +23,7 @@ local files = {
   cpp = { 'g++ -o temp ', ' && ./temp && rm ./temp' },
 }
 local function Runfile()
-  -- vim.cmd [[w]]
+  -- vim.cmd.write()
   local cmds = files[vim.bo.filetype]
   local command = cmds[1] .. vim.fn.expand('%:t') .. cmds[2]
   if command ~= nil then
@@ -46,6 +46,7 @@ toggleterm.setup {
       return vim.o.columns * 0.4
     end
   end,
+  direction = 'float',
   open_mapping = [[<c-t>]],
   on_open = function(term)
     local opts = { buffer = term.bufnr }

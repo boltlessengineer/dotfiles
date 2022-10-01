@@ -3,4 +3,9 @@ if not ok then
   return
 end
 
-gitsigns.setup {}
+gitsigns.setup {
+  signcolumn = true,
+  numhl      = false,
+  linehl     = false,
+  word_diff  = false,
+}

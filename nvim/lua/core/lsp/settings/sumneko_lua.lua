@@ -10,7 +10,7 @@ return {
         -- NOTE: diable `different-requires` to hide warnings
         -- https://www.reddit.com/r/neovim/comments/rvc4vo/annoying_lua_warning/
         -- https://www.reddit.com/r/neovim/comments/snmkr3/comment/hw6diw9/
-        disable = { 'different-requires' },
+        -- disable = { 'different-requires' },
         globals = { 'vim' },
       },
       format = {

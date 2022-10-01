@@ -4,7 +4,7 @@ if not status_ok then return end
 which_key.setup({
   plugins = {
     presets = {
-      operators = true,
+      operators = false,
       motions = false,
       text_objects = false,
       windows = false,
@@ -41,10 +41,18 @@ end
 local mappings = {
   ['0'] = { 'Select Next Parameter' },
   ['9'] = { 'Select Prev Parameter' },
-  [';'] = { '<cmd>Telescope commands<CR>', 'Commands' },
+  [';'] = {
+    name = 'Terminal',
+    ['1'] = { '<cmd>1ToggleTerm<CR>', '1' },
+    ['2'] = { '<cmd>2ToggleTerm<CR>', '2' },
+    ['3'] = { '<cmd>3ToggleTerm<CR>', '3' },
+    ['4'] = { '<cmd>4ToggleTerm<CR>', '4' },
+    f = { '<cmd>ToggleTerm direction=float<CR>', 'Float Terminal' },
+  },
 
   a = { '<cmd>Alpha<CR>', 'Alpha' },
   b = { '<cmd>Telescope buffers<CR>', 'Buffers' },
+  -- c = { '<cmd>Telescope commands<CR>', 'Commands' },
   f = {
     name = 'File',
     f = { '<cmd>Telescope find_files<CR>', 'Find in CWD' },
@@ -54,9 +62,10 @@ local mappings = {
   },
   g = {
     name = 'Git',
-    -- TODO: add way to go-to-next-git-block
     j = { '<cmd>Gitsigns next_hunk<CR>', 'Go To Next Hunk' },
     k = { '<cmd>Gitsigns prev_hunk<CR>', 'Go To Prev Hunk' },
+    r = { '<cmd>Gitsigns reset_hunk<CR>', 'Reset Hunk' },
+    t = { '<cmd>Gitsigns toggle_signs<CR>', 'Toggle signs' },
     s = { '<cmd>Telescope git_status<CR>', 'Status' },
     d = { '<cmd>DiffviewOpen<CR>', 'Diff view' },
     l = { '<cmd>lua _Lazygit_toggle()<CR>', 'LazyGit' },
@@ -82,17 +91,7 @@ local mappings = {
     r = { vim.lsp.buf.rename, 'Rename' },
     w = { '<cmd>TroubleToggle workspace_diagnostics<CR>', 'Workspace Diagnostics' },
   },
-  q = { '<cmd>close<CR>', 'Close Window' },
-  ['<leader>'] = {
-    name = 'Terminal',
-    ['1'] = { '<cmd>1ToggleTerm<CR>', '1' },
-    ['2'] = { '<cmd>2ToggleTerm<CR>', '2' },
-    ['3'] = { '<cmd>3ToggleTerm<CR>', '3' },
-    ['4'] = { '<cmd>4ToggleTerm<CR>', '4' },
-    f = { '<cmd>ToggleTerm direction=float<CR>', 'Float Terminal' },
-  },
-  -- TODO: delete buffer if bufnr(0) is -1 or it is last window(except NvimTree, Trouble, ...) istead of closing window
-  q = { 'Close Window' },
+  q = { 'Smart Close' },
   t = {
     name = 'Trouble',
     w = { '<cmd>TroubleToggle workspace_diagnostics<CR>', 'Workspace Diagnostics' },
