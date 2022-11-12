@@ -29,6 +29,10 @@
    ln -shf ./lf ~/.config/lf
    ```
 
+   > NOTE:
+   > `ln -shf` is OSX specific command.
+   > `ln -sf` is fine for Linux.
+
 ### install fish
 
 ```bash
@@ -52,5 +56,9 @@ fisher update
 
 # TODO
 
+- [ ] Create shell script to check if local config already exists
 - [ ] Test this in new Mac
 - [ ] Add Brewfile
+- [ ] Check this tool
+  - [ ] [Schniz/fnm](https://github.com/Schniz/fnm)
+        Rust based node.js version manager
