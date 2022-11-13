@@ -27,6 +27,9 @@
 
    # install lf config
    ln -shf ./lf ~/.config/lf
+
+   # install wezterm config
+   ln -shf ./wezterm ~/.config/wezterm
    ```
 
    > NOTE:
