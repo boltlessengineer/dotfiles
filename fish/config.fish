@@ -21,5 +21,8 @@ if status is-interactive
   set -gx PATH $PATH $GOROOT/bin $GOPATH/bin
 
   ## Flutter
-  set -gx PATH $PATH "/opt/homebrew/Caskroom/flutter/2.10.4/flutter/bin"
+  set -gx PATH $PATH /opt/homebrew/Caskroom/flutter/2.10.4/flutter/bin
+
+  ## Rust
+  set -gx PATH $PATH $HOME/.cargo/bin
 end
