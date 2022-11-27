@@ -1,11 +1,23 @@
 local wezterm = require 'wezterm'
 return {
   font = wezterm.font_with_fallback {
+    -- 'JetBrains Mono',
     'Fira Code',
     'Menlo',
-    'Symbols Nerd Font',
-    -- TODO: better Korean font
+    'Sarasa Mono K',
+    -- 'FiraCode Nerd Font',
+    'Noto Color Emoji',
+  },
+  line_height = 1.2,
+  allow_square_glyphs_to_overflow_width = "Always",
+  hide_tab_bar_if_only_one_tab = true,
+  window_padding = {
+    top    = 1,
+    bottom = 1,
+    left   = 1,
+    right  = 1,
   },
   font_size = 16.0,
   color_scheme = 'Catppuccin Mocha',
+  -- disable_default_key_bindings = true,
 }
