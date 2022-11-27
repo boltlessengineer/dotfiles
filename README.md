@@ -57,6 +57,16 @@ fish --no-config
 fisher update
 ```
 
+### Install stuffs
+```bash
+# Neovim
+brew install neovim --HEAD
+
+# WezTerm
+brew tap wez/wezterm
+brew install --cask wez/wezterm/wezterm # or wez/wezterm/wezterm-nighly
+```
+
 # TODO
 
 - [ ] Create shell script to check if local config already exists
