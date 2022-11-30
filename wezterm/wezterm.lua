@@ -7,10 +7,12 @@ return {
     'Sarasa Mono K',
     -- 'FiraCode Nerd Font',
     'Noto Color Emoji',
+    'Symbols Nerd Font',
   },
   line_height = 1.2,
   allow_square_glyphs_to_overflow_width = "Always",
   hide_tab_bar_if_only_one_tab = true,
+  adjust_window_size_when_changing_font_size = false,
   window_padding = {
     top    = 1,
     bottom = 1,
