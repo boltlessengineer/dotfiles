@@ -7,7 +7,7 @@ return {
     'Sarasa Mono K',
     -- 'FiraCode Nerd Font',
     'Noto Color Emoji',
-    'Symbols Nerd Font',
+    'Symbols Nerd Font Mono',
   },
   line_height = 1.2,
   allow_square_glyphs_to_overflow_width = "Always",
