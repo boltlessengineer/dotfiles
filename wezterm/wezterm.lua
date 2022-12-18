@@ -1,13 +1,41 @@
 local wezterm = require 'wezterm'
 return {
   font = wezterm.font_with_fallback {
-    -- 'JetBrains Mono',
     'Fira Code',
     'Menlo',
     'Sarasa Mono K',
-    -- 'FiraCode Nerd Font',
     'Noto Color Emoji',
     'Symbols Nerd Font Mono',
+  },
+  -- TODO: Issue/PR for only one `italic = true`
+  font_rules = {
+    {
+      italic = true,
+      intensity = 'Normal',
+      font = wezterm.font {
+        -- TODO: buy 'Operator Mono' font someday...
+        family = 'Victor Mono',
+        style = 'Italic',
+      },
+    },
+    {
+      italic = true,
+      intensity = 'Half',
+      font = wezterm.font {
+        family = 'Victor Mono',
+        weight = 'DemiBold',
+        style = 'Italic',
+      },
+    },
+    {
+      italic = true,
+      intensity = 'Bold',
+      font = wezterm.font {
+        family = 'Victor Mono',
+        weight = 'Bold',
+        style = 'Italic',
+      },
+    },
   },
   line_height = 1.2,
   allow_square_glyphs_to_overflow_width = "Always",
