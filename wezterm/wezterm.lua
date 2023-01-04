@@ -14,16 +14,13 @@ return {
       intensity = 'Normal',
       font = wezterm.font {
         -- TODO: buy 'Operator Mono' font someday...
-        family = 'Victor Mono',
-        style = 'Italic',
-      },
-    },
-    {
-      italic = true,
-      intensity = 'Half',
-      font = wezterm.font {
-        family = 'Victor Mono',
-        weight = 'DemiBold',
+        -- other cursive fonts :
+        -- Cascadia Mono,
+        -- Victor Mono,
+        -- Dank Mono
+        family = 'Cascadia Code',
+        harfbuzz_features = { 'ss01=1' },
+        weight = 'DemiLight',
         style = 'Italic',
       },
     },
@@ -31,7 +28,8 @@ return {
       italic = true,
       intensity = 'Bold',
       font = wezterm.font {
-        family = 'Victor Mono',
+        family = 'Cascadia Code',
+        harfbuzz_features = { 'ss01=1' },
         weight = 'Bold',
         style = 'Italic',
       },
