@@ -84,6 +84,7 @@ return {
     'Menlo',
     'Sarasa Mono K',
     'Noto Color Emoji',
+    -- 'codicon',
     'Symbols Nerd Font Mono',
   },
   -- TODO: Issue/PR for only one `italic = true`
@@ -127,7 +128,9 @@ return {
     left   = 0,
     right  = 0,
   },
+  use_resize_increments = true,
   font_size = 16.0,
   color_scheme = 'Catppuccin Mocha',
   -- disable_default_key_bindings = true,
+  use_ime = false, -- this will fix <C-/>, <C-g> binding issue
 }
