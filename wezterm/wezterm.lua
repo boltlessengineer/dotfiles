@@ -1,5 +1,6 @@
 local wezterm = require 'wezterm'
 
+-- find from: https://github.com/thanhvule0310/dotfiles/blob/main/config/wezterm/wezterm.lua
 local function get_process(tab)
   local process_icons = {
     ["fish"] = {
@@ -38,6 +39,9 @@ local function get_process(tab)
   }
 
   local process_name = string.gsub(tab.active_pane.foreground_process_name, "(.*[/\\])(.*)", "%2")
+  if process_name == '' then
+    process_name = '?'
+  end
 
   return wezterm.format(process_icons[process_name]
     or {
@@ -78,6 +82,8 @@ wezterm.on(
   end
 )
 
+local lineheight = 1.5
+
 return {
   font = wezterm.font_with_fallback {
     'Fira Code',
@@ -87,17 +93,12 @@ return {
     -- 'codicon',
     'Symbols Nerd Font Mono',
   },
-  -- TODO: Issue/PR for only one `italic = true`
   font_rules = {
     {
       italic = true,
       intensity = 'Normal',
       font = wezterm.font {
-        -- TODO: buy 'Operator Mono' font someday...
-        -- other cursive fonts :
-        -- Cascadia Mono,
-        -- Victor Mono,
-        -- Dank Mono
+        -- other cursive fonts : Operator Mono, Cascadia Mono, Victor Mono, Dank Mono
         family = 'Cascadia Code',
         harfbuzz_features = { 'ss01=1' },
         weight = 'DemiLight',
@@ -115,13 +116,15 @@ return {
       },
     },
   },
-  line_height = 1.2,
+  line_height = lineheight,
   allow_square_glyphs_to_overflow_width = "Always",
-  hide_tab_bar_if_only_one_tab = false,
+  hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
   tab_max_width = 50,
   adjust_window_size_when_changing_font_size = false,
+  -- window_background_opacity = 0.95,
+  -- window_decorations = "RESIZE",
   window_padding = {
     top    = 0,
     bottom = 0,
@@ -130,7 +133,25 @@ return {
   },
   use_resize_increments = true,
   font_size = 16.0,
+  -- set underline at bottom position based on lineheight
+  underline_position = ((lineheight - 1) * 1000 + 300) .. '%',
+  underline_thickness = "1.5pt",
+  cursor_thickness = "1pt",
   color_scheme = 'Catppuccin Mocha',
   -- disable_default_key_bindings = true,
-  use_ime = false, -- this will fix <C-/>, <C-g> binding issue
+  keys = {
+    { key = 'Tab', mods = 'CTRL', action = wezterm.action.DisableDefaultAssignment },
+    { key = 'Tab', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
+    { key = 's', mods = 'CMD', action = wezterm.action.SendKey { key = 's', mods = 'ALT' } },
+    -- { key = '1', mods = 'CMD', action = wezterm.action.DisableDefaultAssignment },
+    -- { key = '2', mods = 'CMD', action = wezterm.action.DisableDefaultAssignment },
+    -- { key = '3', mods = 'CMD', action = wezterm.action.DisableDefaultAssignment },
+    -- { key = '4', mods = 'CMD', action = wezterm.action.DisableDefaultAssignment },
+    -- { key = '5', mods = 'CMD', action = wezterm.action.DisableDefaultAssignment },
+    -- { key = '6', mods = 'CMD', action = wezterm.action.DisableDefaultAssignment },
+    -- { key = '7', mods = 'CMD', action = wezterm.action.DisableDefaultAssignment },
+    -- { key = '8', mods = 'CMD', action = wezterm.action.DisableDefaultAssignment },
+    -- { key = '9', mods = 'CMD', action = wezterm.action.DisableDefaultAssignment },
+  },
+  use_ime = false, -- HACK: this will fix <C-/>, <C-g> binding issue
 }
