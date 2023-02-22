@@ -15,6 +15,11 @@ if status is-interactive
 
   set -gx EDITOR nvim
 
+  # set $TERM as wezterm to support undercurl in neovim (see wezterm#2505)
+  if test "$TERM_PROGRAM" = "WezTerm"
+    set -gx TERM wezterm
+  end
+
   ## Go
   set -gx GOROOT "$(brew --prefix golang)/libexec"
   set -gx GOPATH $HOME/go

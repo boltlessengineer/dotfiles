@@ -6,35 +6,39 @@
 
 1. Install Apple's Command Line Tools, which are prerequisites for Git and Homebrew
 
-   ```bash
-   xcode-select --install
-   ```
+```bash
+xcode-select --install
+```
 
 2. Clone repo into new hidden directory
 
-   ```bash
-   git clone https://github.com/boltlessengineer/dotfiles ~/.dotfiles
-   ```
+```bash
+git clone https://github.com/boltlessengineer/dotfiles ~/.dotfiles
+```
 
 3. Create symlinks in the $HOME directory to the real files in the repo
 
-   ```bash
-   # install neovim config
-   ln -shf ./nvim ~/.config/nvim
+```bash
+# install neovim config
+ln -shf ./nvim ~/.config/nvim
 
-   # install fish config
-   ln -shf ./fish ~/.config/fish
+# install fish config
+ln -shf ./fish ~/.config/fish
 
-   # install lf config
-   ln -shf ./lf ~/.config/lf
+# install lf config
+ln -shf ./lf ~/.config/lf
 
-   # install wezterm config
-   ln -shf ./wezterm ~/.config/wezterm
-   ```
+# install wezterm config
+ln -shf ./wezterm ~/.config/wezterm
+tempfile=(mktemp) \
+  && curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo \
+  && tic -x -o ~/.terminfo $tempfile \
+  && rm $tempfile
+```
 
-   > NOTE:
-   > `ln -shf` is OSX specific command.
-   > `ln -sf` is fine for Linux.
+> NOTE:
+> `ln -shf` is OSX specific command.
+> `ln -sf` is fine for Linux.
 
 ### install fish
 
