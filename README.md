@@ -30,6 +30,7 @@ ln -shf ./lf ~/.config/lf
 
 # install wezterm config
 ln -shf ./wezterm ~/.config/wezterm
+# download wezterm terminfo file (see official FAQ)
 tempfile=(mktemp) \
   && curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo \
   && tic -x -o ~/.terminfo $tempfile \
