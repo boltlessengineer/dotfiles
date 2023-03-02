@@ -9,6 +9,8 @@ if status is-interactive
   alias lT="exa -Tlh --no-user --no-time"
   alias ll="exa -lh --no-user"
   alias la="exa -lha --git --no-user"
+  alias nv="foreground_nvim"
+  alias gr="gh repo clone"
 
   # Exported Variables
   set -gx PATH ~/.local/bin $PATH
