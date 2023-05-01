@@ -123,7 +123,8 @@ return {
   tab_bar_at_bottom = true,
   tab_max_width = 50,
   adjust_window_size_when_changing_font_size = false,
-  -- window_background_opacity = 0.95,
+  -- window_background_opacity = 0.9,
+  macos_window_background_blur = 20,
   -- window_decorations = "RESIZE",
   window_padding = {
     top    = 0,
@@ -134,11 +135,14 @@ return {
   use_resize_increments = true,
   font_size = 16.0,
   -- set underline at bottom position based on lineheight
-  underline_position = ((lineheight - 1) * 1000 + 300) .. '%',
+  -- NOTE: subtract 150 to prevent undercurl cutoff
+  underline_position = ((lineheight - 1) * 1000 + 300) - 150 .. '%',
   underline_thickness = "1.5pt",
   cursor_thickness = "1pt",
   color_scheme = 'Catppuccin Mocha',
-  -- disable_default_key_bindings = true,
+  disable_default_key_bindings = false,
+  enable_csi_u_key_encoding = false,
+  enable_kitty_keyboard = false,
   keys = {
     { key = 'Tab', mods = 'CTRL', action = wezterm.action.DisableDefaultAssignment },
     { key = 'Tab', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
@@ -153,5 +157,5 @@ return {
     -- { key = '8', mods = 'CMD', action = wezterm.action.DisableDefaultAssignment },
     -- { key = '9', mods = 'CMD', action = wezterm.action.DisableDefaultAssignment },
   },
-  use_ime = false, -- HACK: this will fix <C-/>, <C-g> binding issue
+  use_ime = true,
 }
