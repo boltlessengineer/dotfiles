@@ -33,4 +33,8 @@ if status is-interactive
 
   ## Rust
   set -gx PATH $PATH $HOME/.cargo/bin
+
+  ## FZF
+  set -gx FZF_DEFAULT_OPTS "--bind='ctrl-u:preview-half-page-up' \
+--bind='ctrl-d:preview-half-page-down'"
 end
