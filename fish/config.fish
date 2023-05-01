@@ -11,6 +11,7 @@ if status is-interactive
   alias la="exa -lha --git --no-user"
   alias nv="foreground_nvim"
   alias gr="gh repo clone"
+  alias glz="lazygit"
 
   # Exported Variables
   set -gx PATH ~/.local/bin $PATH
