@@ -133,7 +133,7 @@ return {
     right  = 0,
   },
   use_resize_increments = true,
-  font_size = 16.0,
+  font_size = 15.0,
   -- set underline at bottom position based on lineheight
   -- NOTE: subtract 150 to prevent undercurl cutoff
   underline_position = ((lineheight - 1) * 1000 + 300) - 150 .. '%',
@@ -142,7 +142,8 @@ return {
   color_scheme = 'Catppuccin Mocha',
   disable_default_key_bindings = false,
   enable_csi_u_key_encoding = false,
-  enable_kitty_keyboard = false,
+  enable_kitty_keyboard = true,
+  enable_kitty_graphics = true,
   keys = {
     { key = 'Tab', mods = 'CTRL', action = wezterm.action.DisableDefaultAssignment },
     { key = 'Tab', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
