@@ -133,7 +133,7 @@ return {
     right  = 0,
   },
   use_resize_increments = true,
-  font_size = 15.0,
+  font_size = 12.0,
   -- set underline at bottom position based on lineheight
   -- NOTE: subtract 150 to prevent undercurl cutoff
   underline_position = ((lineheight - 1) * 1000 + 300) - 150 .. '%',
