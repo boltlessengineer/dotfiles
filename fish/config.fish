@@ -16,6 +16,10 @@ if status is-interactive
   # Exported Variables
   set -gx PATH ~/.local/bin $PATH
 
+  if not set -q XDG_CONFIG_HOME
+    set -gx XDG_CONFIG_HOME "$HOME/.config"
+  end
+
   set -gx EDITOR nvim
 
   # set $TERM as wezterm to support undercurl in neovim (see wezterm#2505)
