@@ -25,6 +25,9 @@ ln -shf ./nvim ~/.config/nvim
 # install fish config
 ln -shf ./fish ~/.config/fish
 
+# copy tmux config
+ln -shf ./tmux.conf ~/.tmux.conf
+
 # install lf config
 ln -shf ./lf ~/.config/lf
 
