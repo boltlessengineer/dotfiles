@@ -82,7 +82,7 @@ wezterm.on(
   end
 )
 
-local lineheight = 1.5
+local lineheight = 1.2
 
 return {
   font = wezterm.font_with_fallback {
@@ -132,14 +132,15 @@ return {
     left   = 0,
     right  = 0,
   },
-  use_resize_increments = true,
+  use_resize_increments = false,
   font_size = 12.0,
   -- set underline at bottom position based on lineheight
   -- NOTE: subtract 150 to prevent undercurl cutoff
   underline_position = ((lineheight - 1) * 1000 + 300) - 150 .. '%',
   underline_thickness = "1.5pt",
   cursor_thickness = "1pt",
-  color_scheme = 'Catppuccin Mocha',
+  -- TODO: import colorscheme from Neovim
+  color_scheme = 'Kanagawa (Gogh)',
   disable_default_key_bindings = false,
   enable_csi_u_key_encoding = false,
   enable_kitty_keyboard = true,
