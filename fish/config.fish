@@ -4,7 +4,8 @@ if status is-interactive
     zoxide init fish | source
 
     # Aliases
-    alias l="exa"
+    alias l="ls"
+    alias ls="exa"
     alias lt="exa -T"
     alias lT="exa -Tlh --no-user --no-time"
     alias ll="exa -lh --no-user"
@@ -52,3 +53,14 @@ if status is-interactive
         set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
     end
 end
+
+# ghcup-env
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
+set -gx PATH $HOME/.cabal/bin $PATH /Users/boltless/.ghcup/bin
+
+# pnpm
+set -gx PNPM_HOME "/Users/boltless/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
