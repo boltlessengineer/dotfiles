@@ -10,6 +10,8 @@ if status is-interactive
     alias lT="exa -Tlh --no-user --no-time"
     alias ll="exa -lh --no-user"
     alias la="exa -lha --git --no-user"
+    # alias la="ls -la"
+    # alias ll="ls -l"
     alias nv="foreground_nvim"
     alias gs="git status"
     alias gb="git checkout"
@@ -68,7 +70,7 @@ end
 # pnpm end
 
 # bob-nvim
-set -gx PATH /Users/boltless/.local/share/bob/nvim-bin $PATH
+set -gx PATH $HOME/.local/share/bob/nvim-bin $PATH
 
 set -gx BUN_INSTALL $HOME/.bun
 set -gx PATH $BUN_INSTALL/bin $PATH
@@ -78,3 +80,9 @@ set -gx PATH $BUN_INSTALL/bin $PATH
 command -v luarocks &> /dev/null && eval $(luarocks path --no-bin)
 ## set PATH
 set -gx PATH $HOME/.luarocks/bin $PATH
+
+# fzf
+fzf --fish | source
+# fzf end
+
+set -gx PATH $HOME/.local/share/bob/nvim-bin $PATH
