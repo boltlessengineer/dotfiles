@@ -15,6 +15,8 @@ if status is-interactive
     alias gb="git checkout"
     alias gr="gh repo clone"
     alias glz="lazygit"
+    alias rvim="NVIM_APPNAME=nvim_rocks nvim"
+    alias nn="NVIM_APPNAME=nativevim nvim"
 
     # Exported Variables
     set -gx PATH ~/.local/bin $PATH
@@ -64,3 +66,15 @@ if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+# bob-nvim
+set -gx PATH /Users/boltless/.local/share/bob/nvim-bin $PATH
+
+set -gx BUN_INSTALL $HOME/.bun
+set -gx PATH $BUN_INSTALL/bin $PATH
+
+# luarocks
+## set LUA_PATH and LUA_CPATH
+command -v luarocks &> /dev/null && eval $(luarocks path --no-bin)
+## set PATH
+set -gx PATH $HOME/.luarocks/bin $PATH
