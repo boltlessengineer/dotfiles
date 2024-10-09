@@ -1,0 +1,5 @@
+theme = Github Dark
+font-family = "Fira Code"
+window-padding-color = extend-always
+
+keybind = global:super+o=toggle_quick_terminal
