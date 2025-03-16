@@ -1,0 +1,6 @@
+* Ideas
+
+** `find-port-ps` command (alias to `fpp`)
+
+   This command will list all id of processes that is listening to specific
+   port with tmux session name it belongs.
