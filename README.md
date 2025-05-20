@@ -19,30 +19,23 @@ git clone https://github.com/boltlessengineer/dotfiles ~/.dotfiles
 3. Create symlinks in the $HOME directory to the real files in the repo
 
 ```bash
-# install neovim config
-ln -shf ./nvim ~/.config/nvim
-
 # install fish config
-ln -shf ./fish ~/.config/fish
+ln -sf ./fish ~/.config/fish
 
 # copy tmux config
-ln -shf ./tmux.conf ~/.tmux.conf
+ln -sf ./tmux.conf ~/.tmux.conf
 
 # install lf config
-ln -shf ./lf ~/.config/lf
+ln -sf ./lf ~/.config/lf
 
 # install wezterm config
-ln -shf ./wezterm ~/.config/wezterm
+ln -sf ./wezterm ~/.config/wezterm
 # download wezterm terminfo file (see official FAQ)
 tempfile=(mktemp) \
   && curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo \
   && tic -x -o ~/.terminfo $tempfile \
   && rm $tempfile
 ```
-
-> NOTE:
-> `ln -shf` is OSX specific command.
-> `ln -sf` is fine for Linux.
 
 ### install fish
 
