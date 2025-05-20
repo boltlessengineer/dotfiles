@@ -1,0 +1,26 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Seongmin Lee
+	email = boltlessengineer@proton.me
+	signingkey = ~/.ssh/git-sign-key.pub
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/allowed_signers
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[url "git@github.com:boltlessengineer/"]
+    insteadOf = self:
+[core]
+	excludesFile = ~/.config/git/gitignore_global
+[rerere]
+	enabled = true
+[alias]
+	lg = log --branches --remotes --tags --graph --decorate
+	ll = log --branches --remotes --tags --graph --decorate --oneline
+	find = !sh -c 'git-repo-search \"$@\" | fzf | awk \"{print \\$NF}\" --
+
+# vim:ft=gitconfig
