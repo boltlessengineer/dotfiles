@@ -1,7 +1,7 @@
 "$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
 
 [ui]
-default-command = "log"
+default-command = ["log", "--no-pager"]
 # diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
 # merge-editor = "vimdiff"
 # conflict-marker-style = "git"
