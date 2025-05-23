@@ -48,6 +48,7 @@
         pkgs.hello
         pkgs.janet
         pkgs.meld
+        pkgs.nodejs_23
         pkgs.ripgrep
         pkgs.sumneko-lua-language-server
         pkgs.unixtools.watch
