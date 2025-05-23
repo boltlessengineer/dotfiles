@@ -54,6 +54,8 @@
     InitialKeyRepeat = 10;
     # default minimum is 2 (30ms)
     KeyRepeat = 1;
+    # Use f1, f2, etc. keys as standard function keys.
+    "com.apple.keyboard.fnState" = true;
   };
 
   # reference https://medium.com/@zmre/nix-darwin-quick-tip-activate-your-preferences-f69942a93236
