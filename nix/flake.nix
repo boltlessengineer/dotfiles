@@ -38,6 +38,7 @@
     packages.${system}.default = pkgs.buildEnv {
       name = "my-env";
       paths = [
+        pkgs.anki-bin
         pkgs.bacon
         pkgs.btop
         pkgs.dust
@@ -52,6 +53,8 @@
         pkgs.unixtools.watch
         pkgs-unstable.jujutsu
         pkgs-unstable.neovim
+        # TODO: automate this with nix:
+        # $ ln -sfn ~/.nix-profile/Applications ~/Applications/Nix\ User\ Apps
       ];
     };
   };
