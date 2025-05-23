@@ -1,4 +1,5 @@
 .DS_Store
 note
+neorg.log
 
 # vim:ft=gitignore
