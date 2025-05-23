@@ -38,11 +38,16 @@
     packages.${system}.default = pkgs.buildEnv {
       name = "my-env";
       paths = [
+        pkgs.bacon
         pkgs.btop
+        pkgs.dust
+        pkgs.eza
+        pkgs.fd
         pkgs.gh
         pkgs.hello
         pkgs.janet
         pkgs.meld
+        pkgs.ripgrep
         pkgs.sumneko-lua-language-server
         pkgs.unixtools.watch
         pkgs-unstable.jujutsu
