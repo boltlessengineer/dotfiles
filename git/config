@@ -14,8 +14,6 @@
 	insteadOf = https://github.com/
 [url "git@github.com:boltlessengineer/"]
     insteadOf = self:
-[core]
-	excludesFile = ~/.config/git/gitignore_global
 [rerere]
 	enabled = true
 [alias]
