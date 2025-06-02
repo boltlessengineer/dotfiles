@@ -28,6 +28,12 @@
       modules = [
         ./darwin.nix
       ];
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          (import ./overlays/orion-overlay.nix)
+        ];
+      };
       specialArgs = {
         inherit self pkgs-unstable;
       };
