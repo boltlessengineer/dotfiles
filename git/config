@@ -17,6 +17,7 @@
 [rerere]
 	enabled = true
 [alias]
+    st = status
 	lg = log --branches --remotes --tags --graph --decorate
 	ll = log --branches --remotes --tags --graph --decorate --oneline
 	find = !sh -c 'git-repo-search \"$@\" | fzf | awk \"{print \\$NF}\" --
