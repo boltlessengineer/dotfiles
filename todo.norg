@@ -1,3 +1,7 @@
+* General TODOs
+
+- ( ) move `flake.nix` to root directory
+
 * Ideas
 
 ** `find-port-ps` command (alias to `fpp`)
