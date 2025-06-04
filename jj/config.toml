@@ -14,3 +14,6 @@ email = "boltlessengineer@proton.me"
 behavior = "own"
 backend = "ssh"
 key = "~/.ssh/git-sign-key.pub"
+
+[git]
+write-change-id-header = true
