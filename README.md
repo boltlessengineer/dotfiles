@@ -20,16 +20,16 @@ git clone https://github.com/boltlessengineer/dotfiles ~/.dotfiles
 
 ```bash
 # install fish config
-ln -sf ./fish ~/.config/fish
+ln -snf ./fish ~/.config/fish
 
 # copy tmux config
-ln -sf ./tmux.conf ~/.tmux.conf
+ln -snf ./tmux.conf ~/.tmux.conf
 
 # install lf config
-ln -sf ./lf ~/.config/lf
+ln -snf ./lf ~/.config/lf
 
 # install wezterm config
-ln -sf ./wezterm ~/.config/wezterm
+ln -snf ./wezterm ~/.config/wezterm
 # download wezterm terminfo file (see official FAQ)
 tempfile=(mktemp) \
   && curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo \
@@ -67,12 +67,3 @@ brew install neovim --HEAD
 brew tap wez/wezterm
 brew install --cask wez/wezterm/wezterm # or wez/wezterm/wezterm-nighly
 ```
-
-# TODO
-
-- [ ] Create shell script to check if local config already exists
-- [ ] Test this in new Mac
-- [ ] Add Brewfile
-- [ ] Check this tool
-  - [ ] [Schniz/fnm](https://github.com/Schniz/fnm)
-        Rust based node.js version manager
