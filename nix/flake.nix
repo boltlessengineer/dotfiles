@@ -17,7 +17,10 @@
   }:
   let
     system = "aarch64-darwin";
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = import nixpkgs {
+      inherit system;
+      overlays = [ (import ./overlays/jpm.nix) ];
+    };
     pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
   in
   {
@@ -47,6 +50,7 @@
         pkgs.gh
         pkgs.hello
         pkgs.janet
+        pkgs.jpm
         pkgs.meld
         pkgs.nodejs_24
         pkgs.ripgrep
