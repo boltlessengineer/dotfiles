@@ -2,6 +2,7 @@
 
 [ui]
 default-command = ["log", "--no-pager"]
+should-sign-off = true
 # diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
 # merge-editor = "vimdiff"
 # conflict-marker-style = "git"
@@ -17,3 +18,20 @@ key = "~/.ssh/git-sign-key.pub"
 
 [git]
 write-change-id-header = true
+
+[templates]
+draft_commit_description = '''
+concat(
+  coalesce(description, default_commit_description, "\n"),
+  if(
+    config("ui.should-sign-off").as_boolean() && !description.contains("Signed-off-by: " ++ author.name()),
+    "\nSigned-off-by: " ++ author.name() ++ " <" ++ author.email() ++ ">",
+  ),
+  surround(
+    "\nJJ: This commit contains the following changes:\n", "",
+    indent("JJ:     ", diff.summary()),
+  ),
+  "\nJJ: ignore-rest\n",
+  diff.git(),
+)
+'''
