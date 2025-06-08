@@ -16,3 +16,8 @@ export EDITOR="$(command -v nvim || command -v vim)"
 
 ## Fzf shell integration
 source <(fzf --zsh)
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
+bindkey '^X^E' edit-command-line
