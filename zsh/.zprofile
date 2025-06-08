@@ -19,6 +19,8 @@ command -v luarocks &> /dev/null && eval $(luarocks path --no-bin)
 ## set PATH
 export PATH=$HOME/.luarocks/bin:$PATH
 
+# janet / jpm
+export JANET_TREE=$HOME/.jpm
 
 
 
