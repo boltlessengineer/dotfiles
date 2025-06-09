@@ -56,6 +56,7 @@
         pkgs.ripgrep
         pkgs.sumneko-lua-language-server
         pkgs.unixtools.watch
+        pkgs.qmk
         pkgs-unstable.jujutsu
         pkgs-unstable.neovim
         # TODO: automate this with nix:
