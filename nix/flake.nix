@@ -49,6 +49,7 @@
         pkgs.fd
         pkgs.gh
         pkgs.hello
+        pkgs.iina
         pkgs.janet
         pkgs.jpm
         pkgs.meld
