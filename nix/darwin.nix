@@ -155,6 +155,7 @@
   # TODO: package this into single nix package with SaneSideButtons itself. See pkgs.sensible-side-buttons as a reference
   system.activationScripts.extraActivation.text = ''
     osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/SaneSideButtons.app", hidden:false}'
+    softwareupdate --install-rosetta --agree-to-license
   '';
 
   # # Enable Touch ID support
