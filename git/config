@@ -6,6 +6,8 @@
 	signingkey = ~/.ssh/git-sign-key.pub
 [commit]
 	gpgsign = true
+[core]
+    excludesFile = ~/.config/git/ignore
 [gpg]
 	format = ssh
 [gpg "ssh"]
