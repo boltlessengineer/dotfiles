@@ -22,6 +22,9 @@ export PATH=$HOME/.luarocks/bin:$PATH
 # janet / jpm
 export JANET_TREE=$HOME/.jpm
 
+# HACK: python binary path. honestly I don't like this hard-coded method
+export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+
 
 
 ################ BOTTOM ################
