@@ -3,7 +3,6 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
     [
-      pkgs.brave
       pkgs.fzf
       pkgs.tmux
       pkgs.tree

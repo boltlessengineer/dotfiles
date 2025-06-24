@@ -51,6 +51,7 @@
       paths = [
         pkgs.anki-bin
         pkgs.bacon
+        pkgs.brave
         pkgs.btop
         pkgs.dust
         pkgs.eza
