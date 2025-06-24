@@ -35,6 +35,14 @@
         inherit self pkgs-unstable;
       };
     };
+    darwinConfigurations."boltless-Studio" = nix-darwin.lib.darwinSystem {
+      modules = [
+        ./darwin.nix
+      ];
+      specialArgs = {
+        inherit self pkgs-unstable;
+      };
+    };
     # based on https://zaynetro.com/post/2024-you-dont-need-home-manager-nix
     # $ nix profile install .
     # $ nix profile upgrade nix
