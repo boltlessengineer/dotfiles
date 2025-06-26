@@ -4,7 +4,9 @@ export PATH=$HOME/.local/bin:$PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Rust
-. "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
 
 # bob-nvim
 export PATH=$HOME/.local/share/bob/nvim-bin:$PATH
