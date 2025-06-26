@@ -14,13 +14,18 @@
     ];
 
   launchd.user.agents = {
-    # reference: https://www.danielcorin.com/til/nix-darwin/launch-agents/
+    # reference:
+    # - https://www.danielcorin.com/til/nix-darwin/launch-agents/
+    # - https://medium.com/@anand34577/setting-up-ollama-as-a-background-service-on-macos-66f7492b5cc8
     ollama-serve = {
-      command = "${pkgs.ollama}/bin/ollama serve";
       serviceConfig = {
-        # Label = "com.ollama.serve";
+        Label = "com.ollama.serve";
+        ProgramArguments = [ "${pkgs.ollama}/bin/ollama" "serve" ];
         KeepAlive = true;
         RunAtLoad = true;
+        # TODO: ensure /var/log/ollama exist
+        # StandardOutPath = "/var/log/ollama/stdout.log";
+        # StandardErrorPath = "/var/log/ollama/stderr.log";
         StandardOutPath = "/tmp/ollama_boltless.log";
         StandardErrorPath = "/tmp/ollama_boltless.err";
       };
