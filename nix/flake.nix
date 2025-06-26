@@ -63,7 +63,6 @@
         pkgs.jpm
         pkgs.meld
         pkgs.nodejs_24
-        pkgs.ollama
         pkgs.qmk
         pkgs.ripgrep
         pkgs.sumneko-lua-language-server

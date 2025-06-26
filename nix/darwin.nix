@@ -7,6 +7,7 @@
       pkgs.tmux
       pkgs.tree
       pkgs.vim
+      pkgs.ollama
       # I don't want to touch this due to current neovim settings.
       # remove it when lux.nvim is out
       (pkgs-unstable.lua5_1.withPackages (ps: with ps; [luarocks]))
