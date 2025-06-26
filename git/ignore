@@ -1,5 +1,6 @@
 .DS_Store
 note
 neorg.log
+/.opencode
 
 # vim:ft=gitignore
