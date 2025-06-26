@@ -13,6 +13,20 @@
       (pkgs-unstable.lua5_1.withPackages (ps: with ps; [luarocks]))
     ];
 
+  launchd.user.agents = {
+    # reference: https://www.danielcorin.com/til/nix-darwin/launch-agents/
+    ollama-serve = {
+      command = "${pkgs.ollama}/bin/ollama serve";
+      serviceConfig = {
+        # Label = "com.ollama.serve";
+        KeepAlive = true;
+        RunAtLoad = true;
+        StandardOutPath = "/tmp/ollama_boltless.log";
+        StandardErrorPath = "/tmp/ollama_boltless.err";
+      };
+    };
+  };
+
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
   # Enable rosetta binaries
