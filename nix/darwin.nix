@@ -193,8 +193,9 @@
       "sanesidebuttons"
     ];
     masApps = {
-      Things3 = 904280696;
+      Numbers = 409203825;
       Pages = 409201541;
+      Things3 = 904280696;
     };
   };
 }
