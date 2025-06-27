@@ -61,6 +61,7 @@
         pkgs.iina
         pkgs.janet
         pkgs.jpm
+        pkgs.macmon
         pkgs.meld
         pkgs.nodejs_24
         pkgs.qmk
