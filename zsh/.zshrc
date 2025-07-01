@@ -9,7 +9,8 @@ alias ta="tmux attach"
 alias nn="NVIM_APPNAME=nativevim nvim"
 
 ## Custom prompt
-export PS1='%F{green}%n@%m %F{blue}%~%f %# '
+setopt prompt_subst
+export PS1='%F{green}%n@%m %F{blue}%~%f${IN_NIX_SHELL:+ nix:($IN_NIX_SHELL)} %# '
 
 ## Editor
 export EDITOR="$(command -v nvim || command -v vim)"
