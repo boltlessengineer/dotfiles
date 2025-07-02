@@ -23,6 +23,10 @@ zle -N edit-command-line
 bindkey '^Xe' edit-command-line
 bindkey '^X^E' edit-command-line
 
+if [[ -n "$IN_NIX_SHELL" ]]; then
+    export SHELL=$(which zsh)
+fi
+
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
