@@ -8,7 +8,7 @@
       pkgs.tree
       pkgs.vim
       pkgs.git
-      # pkgs.ollama
+      pkgs.ollama
       # I don't want to touch this due to current neovim settings.
       # remove it when lux.nvim is out
       (pkgs-unstable.lua5_1.withPackages (ps: with ps; [luarocks]))
@@ -18,19 +18,19 @@
     # reference:
     # - https://www.danielcorin.com/til/nix-darwin/launch-agents/
     # - https://medium.com/@anand34577/setting-up-ollama-as-a-background-service-on-macos-66f7492b5cc8
-    # ollama-serve = {
-    #   serviceConfig = {
-    #     Label = "com.ollama.serve";
-    #     ProgramArguments = [ "${pkgs.ollama}/bin/ollama" "serve" ];
-    #     KeepAlive = true;
-    #     RunAtLoad = true;
-    #     # TODO: ensure /var/log/ollama exist
-    #     # StandardOutPath = "/var/log/ollama/stdout.log";
-    #     # StandardErrorPath = "/var/log/ollama/stderr.log";
-    #     StandardOutPath = "/tmp/ollama_boltless.log";
-    #     StandardErrorPath = "/tmp/ollama_boltless.err";
-    #   };
-    # };
+    ollama-serve = {
+      serviceConfig = {
+        Label = "com.ollama.serve";
+        ProgramArguments = [ "${pkgs.ollama}/bin/ollama" "serve" ];
+        KeepAlive = true;
+        RunAtLoad = true;
+        # TODO: ensure /var/log/ollama exist
+        # StandardOutPath = "/var/log/ollama/stdout.log";
+        # StandardErrorPath = "/var/log/ollama/stderr.log";
+        StandardOutPath = "/tmp/ollama_boltless.log";
+        StandardErrorPath = "/tmp/ollama_boltless.err";
+      };
+    };
   };
 
   # Necessary for using flakes on this system.
@@ -186,7 +186,6 @@
     casks = [
       "discord"
       "ghostty"
-      "ollama-app"
       "raycast"
       # there are also pkgs.sensible-side-buttons (original version) which is unfree license
       # this one is foked version of it: "SaneSideButtons"
