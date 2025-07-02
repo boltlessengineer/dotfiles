@@ -19,6 +19,9 @@
     # - https://www.danielcorin.com/til/nix-darwin/launch-agents/
     # - https://medium.com/@anand34577/setting-up-ollama-as-a-background-service-on-macos-66f7492b5cc8
     ollama-serve = {
+      environment = {
+        OLLAMA_HOST = "0.0.0.0";
+      };
       serviceConfig = {
         Label = "com.ollama.serve";
         ProgramArguments = [ "${pkgs.ollama}/bin/ollama" "serve" ];
