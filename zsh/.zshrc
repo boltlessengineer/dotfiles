@@ -7,6 +7,7 @@ alias la="ls -lA"
 alias gs="git status"
 alias ta="tmux attach"
 alias nn="NVIM_APPNAME=nativevim nvim"
+alias nd="nix develop -c zsh -l"
 
 ## Custom prompt
 setopt prompt_subst
